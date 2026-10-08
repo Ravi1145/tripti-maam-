@@ -1,0 +1,156 @@
+{
+  "site": {
+    "url": "https://www.example.com",
+    "urlNote": "TODO: confirm with Tripta - final domain",
+    "title": "Tripta Tarunesh | Foundation Years & Play Expert",
+    "description": "Tripta Tarunesh helps schools strengthen the Foundation Years through play-based learning, teacher development and practical classroom systems across India and the Gulf."
+  },
+  "person": {
+    "name": "Tripta Tarunesh",
+    "headline": "Foundation Years & Play Expert",
+    "roles": [
+      "Early Childhood Education (ECCE)",
+      "School Transformation",
+      "Speaker",
+      "Director, Educational Research - Educational Mentoring India",
+      "Harvard CEEL-PZ",
+      "Founder, PlayXploration"
+    ],
+    "location": "Pune, Maharashtra, India - working across India & the Gulf",
+    "linkedin": "https://www.linkedin.com/in/triptatarunesh/",
+    "email": "TODO: confirm with Tripta",
+    "phone": "TODO: confirm with Tripta",
+    "photo": "TODO: confirm with Tripta",
+    "followers": "13,900+",
+    "skills": ["Training", "Writing", "Leadership", "Education"]
+  },
+  "hero": {
+    "eyebrow": "Foundation Years & Play Expert",
+    "title": "The years that shape everything that follows.",
+    "subtitle": "I translate these ideas into practical classroom systems a teacher can use on a Monday morning with 30 children in front of her.",
+    "ctaPrimary": { "label": "Work with me", "href": "/contact/" },
+    "ctaSecondary": { "label": "Read the newsletter", "href": "/writing/" }
+  },
+  "stats": [
+    { "value": 20, "suffix": "", "prefix": "Nearly ", "label": "years in Early Childhood Education" },
+    { "value": 10, "suffix": "+2", "prefix": "", "label": "national & international organisations - curricula designed" },
+    { "value": 16, "suffix": "", "prefix": "4 to ", "label": "Life Skills programme co-developed (ages)" },
+    { "value": 1950, "suffix": "+", "prefix": "", "label": "educators & leaders at Bett Asia 2026" }
+  ],
+  "about": {
+    "intro": "She helps schools strengthen the Foundation Years - the years that shape everything that follows - with nearly two decades in Early Childhood Education across India and the Gulf.",
+    "question": "Why do some children thrive in school while others struggle, even when equally capable?",
+    "answer": "The answer begins earlier: in relationships, routines, language, play, emotional safety, adult responses and thinking opportunities.",
+    "paragraphs": [
+      "Through Educational Mentoring India she works with school owners, principals, academic leaders, coordinators and teachers to build Early Years and K-12 systems that work for real children in real classrooms, not just in documents.",
+      "Her professional learning spans Harvard CEEL and Project Zero, with continued study of Reggio Emilia, Visible Thinking, Universal Design for Learning, Indian knowledge systems and developmentally appropriate assessment."
+    ],
+    "workWith": "School leaders serious about strengthening the Foundation Years, building teacher capacity, and creating systems that genuinely serve children - not just satisfy compliance.",
+    "pillars": [
+      { "title": "Relationships", "text": "Secure, responsive adults are the first curriculum." },
+      { "title": "Play", "text": "One of the deepest ways children build school readiness." },
+      { "title": "Language", "text": "Talking, listening and wondering before worksheets." },
+      { "title": "Thinking", "text": "Making thinking visible: Why? What if? How do I know?" }
+    ]
+  },
+  "services": [
+    { "title": "Curriculum Design", "text": "Early Years and K-12 curricula built for real classrooms, aligned with NEP 2020 and NCF-FS." },
+    { "title": "Teacher Development", "text": "Practical, repeatable practice for teachers - capacity that outlasts a workshop." },
+    { "title": "School Audits", "text": "Honest, evidence-led reviews of what is actually happening for children." },
+    { "title": "Leadership Mentoring", "text": "Support for owners, principals and academic leaders driving change." },
+    { "title": "Classroom Observation", "text": "Look, listen, interpret and document - turning observation into insight." },
+    { "title": "Assessment Frameworks", "text": "Developmentally appropriate assessment and documentation practices." },
+    { "title": "Inclusion Support", "text": "Systems and practices that welcome every learner." },
+    { "title": "School Improvement Planning", "text": "Roadmaps aligned with NEP 2020, ECCE policy and NCF-FS." }
+  ],
+  "playx": {
+    "tagline": "The playground was full of data. We were just calling it play.",
+    "intro": "PlayXploration helps schools reimagine play-based learning as one of the deepest ways children build school readiness - making visible executive function, emotional regulation, curiosity, confidence, persistence, collaboration, language, problem-solving and meaning-making.",
+    "intersections": [
+      "Play-based learning",
+      "Child development",
+      "Teacher observation",
+      "Developmental domains",
+      "Inclusion",
+      "Parent partnership",
+      "School leadership",
+      "AI-supported analysis",
+      "Future readiness"
+    ],
+    "lenses": [
+      { "title": "Play as activity", "text": "Reveals leadership, resilience, collaboration, self-regulation and spatial intelligence." },
+      { "title": "Play as pedagogy", "text": "Play designed and observed as a way of teaching and learning." }
+    ],
+    "visible": ["Executive function", "Emotional regulation", "Curiosity", "Confidence", "Persistence", "Collaboration", "Language", "Problem-solving", "Meaning-making"]
+  },
+  "fyf": {
+    "title": "Foundation Years First",
+    "launched": "Launched 3 October 2026",
+    "by": "An initiative by Educational Mentoring India",
+    "premise": "One child. Many perspectives. One foundation.",
+    "tagline": "Different gears. One child. One foundation.",
+    "intro": "A space connecting child development, research, policy, pedagogy, family perspectives and classroom reality.",
+    "goals": [
+      "Know more",
+      "Understand why",
+      "Relate evidence to real children",
+      "Question inherited practices",
+      "Connect perspectives that rarely meet"
+    ],
+    "link": "TODO: confirm with Tripta - initiative URL"
+  },
+  "writing": {
+    "newsletter": {
+      "name": "The Unseen Curriculum",
+      "part": "Part 1",
+      "title": "AI in Education: Why AI Readiness Begins in the Foundation Years",
+      "summary": "To prepare a four-year-old for an AI world, strengthen what stays human: talking and listening, wondering, playing, negotiating, persisting and asking \"Why? What if? How do I know?\" - AI in the teacher's hands, childhood in the child's.",
+      "link": "TODO: confirm with Tripta - newsletter URL"
+    },
+    "featured": {
+      "title": "What if play is the child's original curriculum?",
+      "text": "Drawing on Peter Gray's work: animals practise for life through play, and children today get less free, self-directed play. What future capability are they rehearsing?",
+      "closing": "If play is nature's curriculum for preparing children for life, what happens when we replace too much of it with our own?",
+      "tags": ["PlayXploration", "PedagogyOfPlay", "EarlyChildhoodEducation", "LearningThroughPlay", "FutureReadyChildren", "VisibleLearning", "FoundationYears", "ChildDevelopment", "EducationLeadership"]
+    },
+    "essay": {
+      "date": "30 May 2026",
+      "title": "The playground was full of data. We were just calling it play.",
+      "text": "The origin of PlayXploration."
+    }
+  },
+  "speaking": {
+    "events": [
+      {
+        "title": "Bett Asia 2026",
+        "where": "Mandarin Oriental, Kuala Lumpur",
+        "when": "23-24 September 2026",
+        "text": "Spoke on the strategic impact of PlayXploration to an audience of 1,950+ educators, government representatives and education leaders. Also spoke at the Classroom Theatre with Lakshmi Annapurna Chintaluri, her EMI partner and co-speaker, and joined panels and roundtables."
+      },
+      {
+        "title": "Malaysia connection",
+        "where": "Yayasan Generasi Gemilang",
+        "when": "October 2026",
+        "text": "In conversation about the #KitaMain parent-support programme, exploring how EMI's play, educator-mentoring and observation experience could support their programmes."
+      }
+    ],
+    "recognition": ["AWWA Award of Excellence", "Asmita"],
+    "certifications": [
+      { "title": "Look, Listen, Interpret and Document", "org": "Project Zero, Harvard Graduate School of Education" },
+      { "title": "Thinking Routines: The Power of Making Thinking Visible", "org": "Project Zero, Harvard Graduate School of Education" },
+      { "title": "Let's Play: Teaching Strategies for Playful Learning", "org": "Project Zero, Harvard Graduate School of Education" },
+      { "title": "Asmita Dakshini Kaman", "org": "Recognition / certification" }
+    ]
+  },
+  "contact": {
+    "intro": "Working with school leaders serious about the Foundation Years. Tell me about your school and what you hope to change.",
+    "formEndpoint": "TODO: confirm with Tripta - e.g. a Formspree URL, set NEXT_PUBLIC_FORM_ENDPOINT"
+  },
+  "todo": [
+    "Work experience timeline, education details and dates",
+    "Email, phone and social links",
+    "Photo and logos",
+    "Testimonials, school names, case studies",
+    "Final domain, newsletter URL, Foundation Years First URL"
+  ]
+}

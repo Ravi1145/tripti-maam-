@@ -1,0 +1,233 @@
+# Decap CMS configuration. Edit the repo line below, then see README > CMS.
+backend:
+  name: github
+  repo: Ravi1145/tripti-maam-
+  branch: main
+  base_url: ""                 # TODO: set to the live site URL (e.g. https://www.yourdomain.com) once deployed
+  auth_endpoint: api/auth
+
+# When running `npm run dev` + `npm run cms` locally, the admin edits files on disk with no login.
+local_backend: true
+
+site_url: https://www.example.com
+display_url: https://www.example.com
+logo_url: /admin/logo.svg
+publish_mode: simple
+media_folder: public/uploads
+public_folder: /uploads
+locale: en
+
+collections:
+  # ------------------------------------------------------------------ BLOG
+  - name: blog
+    label: Blog posts
+    label_singular: Blog post
+    folder: content/blog
+    extension: md
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}} - {{date}}"
+    sortable_fields: [date, title]
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Publish date, name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+      - { label: Short summary (shown on cards and in Google), name: excerpt, widget: text, hint: "Aim for 140-160 characters." }
+      - { label: Cover image, name: cover, widget: image, required: false }
+      - { label: Tags, name: tags, widget: list, required: false, default: [] }
+      - { label: Author, name: author, widget: string, default: Tripta Tarunesh }
+      - { label: Draft (hide from website), name: draft, widget: boolean, default: false }
+      - { label: SEO title (optional), name: seoTitle, widget: string, required: false, hint: "Leave empty to use the post title." }
+      - { label: SEO description (optional), name: seoDescription, widget: text, required: false }
+      - { label: Body, name: body, widget: markdown }
+
+  # ---------------------------------------------------------------- EVENTS
+  - name: events
+    label: Events & gallery
+    label_singular: Event
+    folder: content/events
+    extension: md
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}} - {{date}}"
+    fields:
+      - { label: Event name, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+      - { label: Location, name: location, widget: string, required: false }
+      - { label: Summary, name: summary, widget: text }
+      - { label: Cover image, name: cover, widget: image, required: false }
+      - label: Photos
+        name: photos
+        widget: list
+        required: false
+        summary: "{{fields.caption}}"
+        fields:
+          - { label: Photo, name: image, widget: image }
+          - { label: Caption (also used as alt text), name: caption, widget: string, required: false }
+      - { label: Draft (hide from website), name: draft, widget: boolean, default: false }
+      - { label: Details, name: body, widget: markdown, required: false }
+
+  # ------------------------------------------------------------------- FAQ
+  - name: faq
+    label: FAQ
+    files:
+      - name: faq
+        label: Frequently asked questions
+        file: content/faq.json
+        format: json
+        fields:
+          - label: Questions
+            name: items
+            widget: list
+            summary: "{{fields.question}}"
+            fields:
+              - { label: Question, name: question, widget: string }
+              - { label: Answer, name: answer, widget: text }
+
+  # --------------------------------------------------- SITE TEXT & SETTINGS
+  - name: site
+    label: Site text & settings
+    files:
+      - name: profile
+        label: All website text
+        file: data/profile.json
+        format: json
+        fields:
+          - label: Site (SEO)
+            name: site
+            widget: object
+            fields:
+              - { label: Live website URL (no trailing slash), name: url, widget: string }
+              - { label: Note, name: urlNote, widget: string, required: false }
+              - { label: Browser/Google title, name: title, widget: string }
+              - { label: Google description, name: description, widget: text }
+          - label: Person
+            name: person
+            widget: object
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Headline, name: headline, widget: string }
+              - { label: Roles, name: roles, widget: list, field: { label: Role, name: role, widget: string } }
+              - { label: Location, name: location, widget: string }
+              - { label: LinkedIn URL, name: linkedin, widget: string }
+              - { label: Email, name: email, widget: string }
+              - { label: Phone, name: phone, widget: string }
+              - { label: Portrait photo path (e.g. /uploads/tripta.jpg), name: photo, widget: string, hint: "Upload via the Media tab, then paste the path here." }
+              - { label: Followers, name: followers, widget: string }
+              - { label: Skills, name: skills, widget: list, field: { label: Skill, name: skill, widget: string } }
+          - label: Home page hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Small heading, name: eyebrow, widget: string }
+              - { label: Big headline, name: title, widget: string }
+              - { label: Subtitle, name: subtitle, widget: text }
+              - label: Main button
+                name: ctaPrimary
+                widget: object
+                fields: [{ label: Text, name: label, widget: string }, { label: Link, name: href, widget: string }]
+              - label: Second button
+                name: ctaSecondary
+                widget: object
+                fields: [{ label: Text, name: label, widget: string }, { label: Link, name: href, widget: string }]
+          - label: Home page numbers
+            name: stats
+            widget: list
+            summary: "{{fields.prefix}}{{fields.value}}{{fields.suffix}} {{fields.label}}"
+            fields:
+              - { label: Text before number, name: prefix, widget: string, required: false }
+              - { label: Number, name: value, widget: number, value_type: int }
+              - { label: Text after number, name: suffix, widget: string, required: false }
+              - { label: Label, name: label, widget: string }
+          - label: About
+            name: about
+            widget: object
+            fields:
+              - { label: Intro, name: intro, widget: text }
+              - { label: Her question, name: question, widget: string }
+              - { label: The answer, name: answer, widget: text }
+              - { label: Paragraphs, name: paragraphs, widget: list, field: { label: Paragraph, name: p, widget: text } }
+              - { label: Who she wants to work with, name: workWith, widget: text }
+              - label: "Four pillars (keep the titles Relationships, Play, Language, Thinking)"
+                name: pillars
+                widget: list
+                fields: [{ label: Title, name: title, widget: string }, { label: Text, name: text, widget: string }]
+          - label: Services
+            name: services
+            widget: list
+            summary: "{{fields.title}}"
+            fields: [{ label: Title, name: title, widget: string }, { label: Text, name: text, widget: text }]
+          - label: PlayXploration page
+            name: playx
+            widget: object
+            fields:
+              - { label: Tagline, name: tagline, widget: string }
+              - { label: Intro, name: intro, widget: text }
+              - { label: Intersections, name: intersections, widget: list, field: { label: Item, name: i, widget: string } }
+              - label: Two lenses
+                name: lenses
+                widget: list
+                fields: [{ label: Title, name: title, widget: string }, { label: Text, name: text, widget: text }]
+              - { label: What play makes visible, name: visible, widget: list, field: { label: Item, name: i, widget: string } }
+          - label: Foundation Years First page
+            name: fyf
+            widget: object
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Launch line, name: launched, widget: string }
+              - { label: By line, name: by, widget: string }
+              - { label: Premise, name: premise, widget: string }
+              - { label: Tagline, name: tagline, widget: string }
+              - { label: Intro, name: intro, widget: text }
+              - { label: Goals, name: goals, widget: list, field: { label: Goal, name: g, widget: string } }
+              - { label: Initiative link, name: link, widget: string }
+          - label: Newsletter / writing page
+            name: writing
+            widget: object
+            fields:
+              - label: Newsletter
+                name: newsletter
+                widget: object
+                fields:
+                  - { label: Name, name: name, widget: string }
+                  - { label: Part, name: part, widget: string }
+                  - { label: Title, name: title, widget: string }
+                  - { label: Summary, name: summary, widget: text }
+                  - { label: Link, name: link, widget: string }
+              - label: Featured post
+                name: featured
+                widget: object
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Text, name: text, widget: text }
+                  - { label: Closing question, name: closing, widget: text }
+                  - { label: Hashtags, name: tags, widget: list, field: { label: Tag, name: t, widget: string } }
+              - label: Origin essay
+                name: essay
+                widget: object
+                fields: [{ label: Date, name: date, widget: string }, { label: Title, name: title, widget: string }, { label: Text, name: text, widget: text }]
+          - label: Speaking & recognition page
+            name: speaking
+            widget: object
+            fields:
+              - label: Events
+                name: events
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Where, name: where, widget: string }
+                  - { label: When, name: when, widget: string }
+                  - { label: Text, name: text, widget: text }
+              - { label: Recognition, name: recognition, widget: list, field: { label: Award, name: r, widget: string } }
+              - label: Certifications
+                name: certifications
+                widget: list
+                summary: "{{fields.title}}"
+                fields: [{ label: Title, name: title, widget: string }, { label: Organisation, name: org, widget: string }]
+          - label: Contact page
+            name: contact
+            widget: object
+            fields:
+              - { label: Intro, name: intro, widget: text }
+              - { label: Form endpoint (info only; set in Vercel env), name: formEndpoint, widget: string }
+          - { label: Outstanding to-do list, name: todo, widget: list, required: false, field: { label: Item, name: i, widget: string } }
