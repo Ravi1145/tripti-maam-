@@ -31,7 +31,7 @@ export default function PlayX() {
           <h2 className="font-serif text-4xl text-ivory md:text-5xl">What play reveals</h2>
           <div className="mt-10 flex flex-wrap gap-3">
             {P.playx.visible.map((t) => (
-              <span key={t} className="rounded-full border border-gold/50 px-5 py-2 text-sm text-gold-light transition hover:bg-gold hover:text-teal-950">{t}</span>
+              <span key={t} className="rounded-sm border border-gold/50 px-5 py-2 text-sm text-gold-light transition hover:bg-gold hover:text-teal-950">{t}</span>
             ))}
           </div>
         </Reveal>
@@ -39,7 +39,7 @@ export default function PlayX() {
       <Section tone="cream">
         <Reveal>
           <Eyebrow>At the intersection of</Eyebrow>
-          <div className="grid gap-px overflow-hidden rounded-3xl bg-gold/30 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-px overflow-hidden rounded-sm bg-gold/30 sm:grid-cols-2 lg:grid-cols-3">
             {P.playx.intersections.map((t) => (
               <div key={t} className="bg-ivory p-8 font-serif text-xl text-teal-900 transition hover:bg-white">{t}</div>
             ))}

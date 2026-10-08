@@ -1,33 +1,28 @@
 "use client";
 import { motion } from "framer-motion";
 import { isTodo, P } from "@/lib";
+import images from "@/data/images.json";
 
-/** Arch-shaped portrait. Shows her photo once person.photo in data/profile.json points to a file in /public. */
+/** Arch-shaped portrait. Uses person.photo, or the "about" site photo, once uploaded in the admin. */
 export default function Portrait({ className = "" }: { className?: string }) {
-  const photo = P.person.photo;
-  const has = !isTodo(photo);
+  const photo = !isTodo(P.person.photo) && P.person.photo ? P.person.photo : (images as Record<string, string>).about;
   return (
     <div className={`relative mx-auto w-full max-w-sm ${className}`}>
-      <motion.div aria-hidden className="absolute -inset-4 rounded-t-[999px] rounded-b-[2rem] border border-gold/50" animate={{ rotate: [0, 1.5, 0, -1.5, 0] }} transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }} />
-      <div className="relative aspect-[4/5] overflow-hidden rounded-t-[999px] rounded-b-[2rem] bg-gradient-to-b from-teal-700 via-teal-900 to-teal-950 shadow-2xl shadow-teal-950/30">
-        {has ? (
+      <div aria-hidden className="arch absolute -inset-3 border border-gold/60" />
+      <div className="arch relative aspect-[3/4] overflow-hidden bg-gradient-to-b from-teal-700 via-teal-900 to-teal-950 shadow-[0_40px_80px_-40px_rgba(10,31,27,0.8)]">
+        {photo ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img src={photo} alt={`Portrait of ${P.person.name}`} className="h-full w-full object-cover" />
         ) : (
           <div className="flex h-full flex-col items-center justify-center p-8 text-center text-ivory">
-            <svg viewBox="0 0 200 200" className="h-40 w-40" aria-hidden>
-              <circle cx="100" cy="78" r="38" fill="#E6CF91" opacity=".9" />
-              <path d="M30 190 C30 130 70 112 100 112 C130 112 170 130 170 190 Z" fill="#C9A24B" />
-              <circle cx="100" cy="100" r="96" fill="none" stroke="#C9A24B" strokeOpacity=".4" strokeDasharray="2 8" />
-            </svg>
-            <p className="mt-4 font-serif text-3xl text-gold-light">Tripta Tarunesh</p>
-            <p className="mt-2 text-xs uppercase tracking-[0.3em] text-ivory/70">Photo: TODO: confirm with Tripta</p>
+            <p className="font-serif text-8xl font-light italic text-gold-light">TT</p>
+            <div className="my-6 h-px w-16 bg-gold" />
+            <p className="font-serif text-2xl">Tripta Tarunesh</p>
+            <p className="mt-3 text-[0.68rem] uppercase tracking-[0.3em] text-ivory/60">Portrait: TODO: confirm with Tripta</p>
           </div>
         )}
       </div>
-      <motion.div initial={{ scale: 0 }} whileInView={{ scale: 1 }} viewport={{ once: true }} transition={{ delay: 0.6, type: "spring" }} className="absolute -bottom-6 -right-4 flex h-28 w-28 items-center justify-center rounded-full bg-gold text-center text-[11px] font-semibold uppercase leading-tight tracking-wider text-teal-950 shadow-xl">
-        Nearly<br />20 years<br />in ECCE
-      </motion.div>
+      <motion.p initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.5 }} className="mt-8 text-center text-[0.68rem] uppercase tracking-[0.3em] text-gold-dark">Nearly two decades in ECCE</motion.p>
     </div>
   );
 }

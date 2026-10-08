@@ -32,7 +32,7 @@ export default function Speaking() {
         <div className="grid gap-6 sm:grid-cols-2">
           {s.recognition.map((r, i) => (
             <Reveal key={r} delay={i * 0.1}>
-              <div className="rounded-3xl border border-gold/40 p-10 text-center transition hover:bg-white/5">
+              <div className="rounded-sm border border-gold/40 p-10 text-center transition hover:bg-white/5">
                 <p className="text-3xl text-gold" aria-hidden>✦</p>
                 <p className="mt-3 font-serif text-3xl text-ivory">{r}</p>
               </div>

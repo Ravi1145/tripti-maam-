@@ -14,7 +14,7 @@ export default function ContactForm() {
       setState(r.ok ? "ok" : "err");
     } catch (err) { setState("err"); }
   }
-  const field = "w-full rounded-2xl border border-gold/30 bg-white/80 px-5 py-4 text-ink outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/40";
+  const field = "w-full rounded-sm border border-gold/30 bg-white/80 px-5 py-4 text-ink outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/40";
   return (
     <form onSubmit={submit} className="space-y-5">
       <div className="grid gap-5 md:grid-cols-2">

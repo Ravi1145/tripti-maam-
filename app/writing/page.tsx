@@ -34,7 +34,7 @@ export default function Writing() {
             <h3 className="font-serif text-3xl leading-tight text-teal-900">{w.essay.title}</h3>
             <p className="mt-4 text-ink/70">{w.essay.text}</p>
             <div className="mt-10 flex flex-wrap gap-2">
-              {w.featured.tags.map((t) => (<span key={t} className="rounded-full bg-teal-100 px-3 py-1 text-xs text-teal-900">#{t}</span>))}
+              {w.featured.tags.map((t) => (<span key={t} className="rounded-sm bg-teal-100 px-3 py-1 text-xs text-teal-900">#{t}</span>))}
             </div>
           </Reveal>
         </div>

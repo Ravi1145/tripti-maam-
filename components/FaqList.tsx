@@ -15,7 +15,7 @@ export default function FaqList({ items }: { items: { question: string; answer: 
     <div>
       <label className="block">
         <span className="sr-only">Search questions</span>
-        <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search questions..." className="w-full rounded-full border border-gold/40 bg-white/80 px-6 py-4 outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/40" />
+        <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search questions..." className="w-full rounded-sm border border-gold/40 bg-white/80 px-6 py-4 outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/40" />
       </label>
       <p className="sr-only" role="status" aria-live="polite">{shown.length} question{shown.length === 1 ? "" : "s"} shown</p>
       <ul className="mt-8 divide-y divide-gold/30 border-y border-gold/30">
@@ -26,7 +26,7 @@ export default function FaqList({ items }: { items: { question: string; answer: 
               <h2>
                 <button id={`${id}-b${i}`} aria-expanded={isOpen} aria-controls={`${id}-p${i}`} onClick={() => setOpen(isOpen ? null : i)} className="flex min-h-[64px] w-full items-center justify-between gap-6 py-6 text-left">
                   <span className="font-serif text-2xl text-teal-900 md:text-3xl">{it.question}</span>
-                  <span aria-hidden className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gold text-xl text-gold-dark transition duration-300 ${isOpen ? "rotate-45 bg-gold text-teal-950" : ""}`}>+</span>
+                  <span aria-hidden className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-sm border border-gold text-xl text-gold-dark transition duration-300 ${isOpen ? "rotate-45 bg-gold text-teal-950" : ""}`}>+</span>
                 </button>
               </h2>
               <AnimatePresence initial={false}>

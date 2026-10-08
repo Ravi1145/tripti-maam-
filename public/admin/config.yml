@@ -1,10 +1,8 @@
-# Decap CMS configuration. Edit the repo line below, then see README > CMS.
+# Decap CMS configuration. The GitHub login URL is set automatically in public/admin/index.html. See README > CMS.
 backend:
   name: github
   repo: Ravi1145/tripti-maam-
   branch: main
-  base_url: ""                 # TODO: set to the live site URL (e.g. https://www.yourdomain.com) once deployed
-  auth_endpoint: api/auth
 
 # When running `npm run dev` + `npm run cms` locally, the admin edits files on disk with no login.
 local_backend: true
@@ -87,6 +85,19 @@ collections:
   - name: site
     label: Site text & settings
     files:
+      - name: images
+        label: Site photos (replace the illustrations)
+        file: data/images.json
+        format: json
+        fields:
+          - { label: "Home page - main photo (children playing / building)", name: hero, widget: image, required: false }
+          - { label: "Classroom photo (teacher with children)", name: classroom, widget: image, required: false }
+          - { label: "Play photo (PlayXploration)", name: play, widget: image, required: false }
+          - { label: "Reading photo", name: reading, widget: image, required: false }
+          - { label: "Outdoor play photo", name: outdoor, widget: image, required: false }
+          - { label: "Workshop / teacher training photo", name: workshop, widget: image, required: false }
+          - { label: "Speaking / stage photo", name: stage, widget: image, required: false }
+          - { label: "About page photo", name: about, widget: image, required: false }
       - name: profile
         label: All website text
         file: data/profile.json

@@ -25,7 +25,7 @@ export default function BlogIndex() {
         {!first && <p className="text-lg text-ink/70">New articles are coming soon.</p>}
         {first && (
           <Reveal>
-            <Link href={`/blog/${first.slug}/`} className="group grid overflow-hidden rounded-[2rem] border border-gold/40 bg-white md:grid-cols-2">
+            <Link href={`/blog/${first.slug}/`} className="group grid overflow-hidden rounded-sm border border-gold/40 bg-white md:grid-cols-2">
               <div className="aspect-[4/3] overflow-hidden md:aspect-auto"><Cover src={first.cover} alt="" seed={0} className="transition duration-700 group-hover:scale-105" /></div>
               <div className="flex flex-col justify-center p-8 md:p-12">
                 <p className="text-xs font-semibold uppercase tracking-[0.3em] text-gold-dark">Latest · {fmtDate(first.date)} · {first.readingMinutes} min read</p>

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant, Montserrat } from "next/font/google";
+import { Cormorant_Garamond, Inter } from "next/font/google";
 import Cursor from "@/components/Cursor";
 import "./globals.css";
 import Nav from "@/components/Nav";
@@ -7,8 +7,8 @@ import Footer from "@/components/Footer";
 import Loader from "@/components/Loader";
 import { P } from "@/lib";
 
-const serif = Cormorant({ subsets: ["latin"], style: ["normal", "italic"], variable: "--font-serif", display: "swap" });
-const sans = Montserrat({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
+const serif = Cormorant_Garamond({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], style: ["normal", "italic"], variable: "--font-serif", display: "swap" });
+const sans = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(P.site.url),
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title: P.site.title, description: P.site.description },
 };
 
-export const viewport: Viewport = { themeColor: "#08282A", width: "device-width", initialScale: 1 };
+export const viewport: Viewport = { themeColor: "#0A1F1B", width: "device-width", initialScale: 1 };
 
 const jsonLd = [
   {

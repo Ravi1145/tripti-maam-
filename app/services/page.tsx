@@ -39,7 +39,7 @@ export default function Services() {
           <Link href="/contact/" className="btn-dark mt-10">Discuss your school →</Link>
         </Reveal>
         <Reveal delay={0.1}>
-          <div className="mx-auto mt-16 max-w-2xl rounded-3xl border border-dashed border-gold/60 p-6 text-center text-sm text-ink/60">
+          <div className="mx-auto mt-16 max-w-2xl rounded-sm border border-dashed border-gold/60 p-6 text-center text-sm text-ink/60">
             Case studies, school names and testimonials: TODO: confirm with Tripta.
           </div>
         </Reveal>

@@ -5,8 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex, nofollow" />
     <title>Content Manager | Tripta Tarunesh</title>
+    <script>
+      // Start the CMS ourselves so the GitHub login always goes through THIS site's /api/auth
+      // (otherwise Decap falls back to Netlify's login service).
+      window.CMS_MANUAL_INIT = true;
+    </script>
   </head>
   <body>
     <script src="https://unpkg.com/decap-cms@^3.1.0/dist/decap-cms.js"></script>
+    <script>
+      CMS.init({ config: { backend: { name: "github", base_url: window.location.origin, auth_endpoint: "api/auth" } } });
+    </script>
   </body>
 </html>

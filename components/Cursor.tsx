@@ -31,7 +31,7 @@ export default function Cursor() {
         <motion.div
           animate={{ width: hover ? 64 : 34, height: hover ? 64 : 34, opacity: hover ? 0.9 : 0.6 }}
           transition={{ type: "spring", stiffness: 250, damping: 20 }}
-          className="-ml-[17px] -mt-[17px] rounded-full border border-gold bg-gold/10 mix-blend-difference"
+          className="-ml-[17px] -mt-[17px] rounded-full border border-gold bg-gold/5"
           style={{ translateX: hover ? -15 : 0, translateY: hover ? -15 : 0 }}
         />
       </motion.div>

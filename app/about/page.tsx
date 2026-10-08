@@ -49,7 +49,7 @@ export default function About() {
           <h2 className="font-serif text-4xl text-ivory md:text-5xl">Continually studying</h2>
           <div className="mt-10 flex flex-wrap gap-3">
             {["Harvard CEEL", "Project Zero", "Reggio Emilia", "Visible Thinking", "Universal Design for Learning", "Indian knowledge systems", "Developmentally appropriate assessment"].map((t) => (
-              <span key={t} className="rounded-full border border-gold/50 px-5 py-2 text-sm text-gold-light transition hover:bg-gold hover:text-teal-950">{t}</span>
+              <span key={t} className="rounded-sm border border-gold/50 px-5 py-2 text-sm text-gold-light transition hover:bg-gold hover:text-teal-950">{t}</span>
             ))}
           </div>
         </Reveal>
@@ -61,7 +61,7 @@ export default function About() {
           <p className="max-w-3xl font-serif text-3xl leading-snug text-teal-900 md:text-4xl">{P.about.workWith}</p>
         </Reveal>
         <Reveal delay={0.1}>
-          <div className="mt-16 rounded-3xl border border-dashed border-gold/60 p-8 text-sm text-ink/60">
+          <div className="mt-16 rounded-sm border border-dashed border-gold/60 p-8 text-sm text-ink/60">
             <strong className="text-teal-900">Experience timeline &amp; education:</strong> TODO: confirm with Tripta (roles, institutions and dates were not available).
           </div>
         </Reveal>

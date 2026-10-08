@@ -28,7 +28,7 @@ Then open http://localhost:3000/admin/ and click "Login with GitHub" (local mode
 
 ## Go live: admin login for Tripta (one-time setup, about 10 minutes)
 1. Push this folder to a GitHub repository.
-2. In `public/admin/config.yml` set `backend.repo` (`owner/repo`) and `backend.base_url` (your live URL).
+2. `public/admin/config.yml` already points at `Ravi1145/tripti-maam-`; change `backend.repo` if you move the repository.
 3. Create a GitHub OAuth App: GitHub > Settings > Developer settings > OAuth Apps > New.
    - Homepage URL: your live URL
    - Authorization callback URL: `https://YOUR-DOMAIN/api/callback`

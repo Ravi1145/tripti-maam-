@@ -45,12 +45,12 @@ export default function Post({ params }: { params: { slug: string } }) {
           <nav aria-label="Breadcrumb" className="text-xs uppercase tracking-[0.3em] text-gold"><Link href="/blog/" className="hover:text-gold-light">Blog</Link> / Article</nav>
           <h1 className="mt-6 font-serif text-5xl leading-[1.05] md:text-7xl">{p.title}</h1>
           <p className="mt-8 text-sm text-ivory/75">By {p.author} · <time dateTime={p.date}>{fmtDate(p.date)}</time> · {p.readingMinutes} min read</p>
-          {!!p.tags.length && <ul className="mt-5 flex flex-wrap gap-2">{p.tags.map((t) => <li key={t} className="rounded-full border border-gold/50 px-3 py-1 text-xs text-gold-light">{t}</li>)}</ul>}
+          {!!p.tags.length && <ul className="mt-5 flex flex-wrap gap-2">{p.tags.map((t) => <li key={t} className="rounded-sm border border-gold/50 px-3 py-1 text-xs text-gold-light">{t}</li>)}</ul>}
         </div>
       </header>
       <Section>
         <article className="mx-auto max-w-3xl">
-          {p.cover && <div className="-mt-32 mb-12 aspect-[16/9] overflow-hidden rounded-3xl shadow-2xl"><Cover src={p.cover} alt={p.title} /></div>}
+          {p.cover && <div className="-mt-32 mb-12 aspect-[16/9] overflow-hidden rounded-sm shadow-2xl"><Cover src={p.cover} alt={p.title} /></div>}
           <div className="prose-lux" dangerouslySetInnerHTML={{ __html: html }} />
         </article>
       </Section>

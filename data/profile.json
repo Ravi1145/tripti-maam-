@@ -20,22 +20,53 @@
     "linkedin": "https://www.linkedin.com/in/triptatarunesh/",
     "email": "TODO: confirm with Tripta",
     "phone": "TODO: confirm with Tripta",
-    "photo": "TODO: confirm with Tripta",
+    "photo": "/uploads/tripta.png",
     "followers": "13,900+",
-    "skills": ["Training", "Writing", "Leadership", "Education"]
+    "skills": [
+      "Training",
+      "Writing",
+      "Leadership",
+      "Education"
+    ]
   },
   "hero": {
     "eyebrow": "Foundation Years & Play Expert",
     "title": "The years that shape everything that follows.",
     "subtitle": "I translate these ideas into practical classroom systems a teacher can use on a Monday morning with 30 children in front of her.",
-    "ctaPrimary": { "label": "Work with me", "href": "/contact/" },
-    "ctaSecondary": { "label": "Read the newsletter", "href": "/writing/" }
+    "ctaPrimary": {
+      "label": "Work with me",
+      "href": "/contact/"
+    },
+    "ctaSecondary": {
+      "label": "Read the newsletter",
+      "href": "/writing/"
+    }
   },
   "stats": [
-    { "value": 20, "suffix": "", "prefix": "Nearly ", "label": "years in Early Childhood Education" },
-    { "value": 10, "suffix": "+2", "prefix": "", "label": "national & international organisations - curricula designed" },
-    { "value": 16, "suffix": "", "prefix": "4 to ", "label": "Life Skills programme co-developed (ages)" },
-    { "value": 1950, "suffix": "+", "prefix": "", "label": "educators & leaders at Bett Asia 2026" }
+    {
+      "value": 20,
+      "suffix": "",
+      "prefix": "Nearly ",
+      "label": "years in Early Childhood Education"
+    },
+    {
+      "value": 10,
+      "suffix": "+2",
+      "prefix": "",
+      "label": "national & international organisations - curricula designed"
+    },
+    {
+      "value": 16,
+      "suffix": "",
+      "prefix": "4 to ",
+      "label": "Life Skills programme co-developed (ages)"
+    },
+    {
+      "value": 1950,
+      "suffix": "+",
+      "prefix": "",
+      "label": "educators & leaders at Bett Asia 2026"
+    }
   ],
   "about": {
     "intro": "She helps schools strengthen the Foundation Years - the years that shape everything that follows - with nearly two decades in Early Childhood Education across India and the Gulf.",
@@ -47,21 +78,57 @@
     ],
     "workWith": "School leaders serious about strengthening the Foundation Years, building teacher capacity, and creating systems that genuinely serve children - not just satisfy compliance.",
     "pillars": [
-      { "title": "Relationships", "text": "Secure, responsive adults are the first curriculum." },
-      { "title": "Play", "text": "One of the deepest ways children build school readiness." },
-      { "title": "Language", "text": "Talking, listening and wondering before worksheets." },
-      { "title": "Thinking", "text": "Making thinking visible: Why? What if? How do I know?" }
+      {
+        "title": "Relationships",
+        "text": "Secure, responsive adults are the first curriculum."
+      },
+      {
+        "title": "Play",
+        "text": "One of the deepest ways children build school readiness."
+      },
+      {
+        "title": "Language",
+        "text": "Talking, listening and wondering before worksheets."
+      },
+      {
+        "title": "Thinking",
+        "text": "Making thinking visible: Why? What if? How do I know?"
+      }
     ]
   },
   "services": [
-    { "title": "Curriculum Design", "text": "Early Years and K-12 curricula built for real classrooms, aligned with NEP 2020 and NCF-FS." },
-    { "title": "Teacher Development", "text": "Practical, repeatable practice for teachers - capacity that outlasts a workshop." },
-    { "title": "School Audits", "text": "Honest, evidence-led reviews of what is actually happening for children." },
-    { "title": "Leadership Mentoring", "text": "Support for owners, principals and academic leaders driving change." },
-    { "title": "Classroom Observation", "text": "Look, listen, interpret and document - turning observation into insight." },
-    { "title": "Assessment Frameworks", "text": "Developmentally appropriate assessment and documentation practices." },
-    { "title": "Inclusion Support", "text": "Systems and practices that welcome every learner." },
-    { "title": "School Improvement Planning", "text": "Roadmaps aligned with NEP 2020, ECCE policy and NCF-FS." }
+    {
+      "title": "Curriculum Design",
+      "text": "Early Years and K-12 curricula built for real classrooms, aligned with NEP 2020 and NCF-FS."
+    },
+    {
+      "title": "Teacher Development",
+      "text": "Practical, repeatable practice for teachers - capacity that outlasts a workshop."
+    },
+    {
+      "title": "School Audits",
+      "text": "Honest, evidence-led reviews of what is actually happening for children."
+    },
+    {
+      "title": "Leadership Mentoring",
+      "text": "Support for owners, principals and academic leaders driving change."
+    },
+    {
+      "title": "Classroom Observation",
+      "text": "Look, listen, interpret and document - turning observation into insight."
+    },
+    {
+      "title": "Assessment Frameworks",
+      "text": "Developmentally appropriate assessment and documentation practices."
+    },
+    {
+      "title": "Inclusion Support",
+      "text": "Systems and practices that welcome every learner."
+    },
+    {
+      "title": "School Improvement Planning",
+      "text": "Roadmaps aligned with NEP 2020, ECCE policy and NCF-FS."
+    }
   ],
   "playx": {
     "tagline": "The playground was full of data. We were just calling it play.",
@@ -78,10 +145,26 @@
       "Future readiness"
     ],
     "lenses": [
-      { "title": "Play as activity", "text": "Reveals leadership, resilience, collaboration, self-regulation and spatial intelligence." },
-      { "title": "Play as pedagogy", "text": "Play designed and observed as a way of teaching and learning." }
+      {
+        "title": "Play as activity",
+        "text": "Reveals leadership, resilience, collaboration, self-regulation and spatial intelligence."
+      },
+      {
+        "title": "Play as pedagogy",
+        "text": "Play designed and observed as a way of teaching and learning."
+      }
     ],
-    "visible": ["Executive function", "Emotional regulation", "Curiosity", "Confidence", "Persistence", "Collaboration", "Language", "Problem-solving", "Meaning-making"]
+    "visible": [
+      "Executive function",
+      "Emotional regulation",
+      "Curiosity",
+      "Confidence",
+      "Persistence",
+      "Collaboration",
+      "Language",
+      "Problem-solving",
+      "Meaning-making"
+    ]
   },
   "fyf": {
     "title": "Foundation Years First",
@@ -111,7 +194,17 @@
       "title": "What if play is the child's original curriculum?",
       "text": "Drawing on Peter Gray's work: animals practise for life through play, and children today get less free, self-directed play. What future capability are they rehearsing?",
       "closing": "If play is nature's curriculum for preparing children for life, what happens when we replace too much of it with our own?",
-      "tags": ["PlayXploration", "PedagogyOfPlay", "EarlyChildhoodEducation", "LearningThroughPlay", "FutureReadyChildren", "VisibleLearning", "FoundationYears", "ChildDevelopment", "EducationLeadership"]
+      "tags": [
+        "PlayXploration",
+        "PedagogyOfPlay",
+        "EarlyChildhoodEducation",
+        "LearningThroughPlay",
+        "FutureReadyChildren",
+        "VisibleLearning",
+        "FoundationYears",
+        "ChildDevelopment",
+        "EducationLeadership"
+      ]
     },
     "essay": {
       "date": "30 May 2026",
@@ -134,12 +227,27 @@
         "text": "In conversation about the #KitaMain parent-support programme, exploring how EMI's play, educator-mentoring and observation experience could support their programmes."
       }
     ],
-    "recognition": ["AWWA Award of Excellence", "Asmita"],
+    "recognition": [
+      "AWWA Award of Excellence",
+      "Asmita"
+    ],
     "certifications": [
-      { "title": "Look, Listen, Interpret and Document", "org": "Project Zero, Harvard Graduate School of Education" },
-      { "title": "Thinking Routines: The Power of Making Thinking Visible", "org": "Project Zero, Harvard Graduate School of Education" },
-      { "title": "Let's Play: Teaching Strategies for Playful Learning", "org": "Project Zero, Harvard Graduate School of Education" },
-      { "title": "Asmita Dakshini Kaman", "org": "Recognition / certification" }
+      {
+        "title": "Look, Listen, Interpret and Document",
+        "org": "Project Zero, Harvard Graduate School of Education"
+      },
+      {
+        "title": "Thinking Routines: The Power of Making Thinking Visible",
+        "org": "Project Zero, Harvard Graduate School of Education"
+      },
+      {
+        "title": "Let's Play: Teaching Strategies for Playful Learning",
+        "org": "Project Zero, Harvard Graduate School of Education"
+      },
+      {
+        "title": "Asmita Dakshini Kaman",
+        "org": "Recognition / certification"
+      }
     ]
   },
   "contact": {
