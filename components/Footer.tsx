@@ -1,34 +1,44 @@
-import Link from "next/link";
-import { P } from "@/lib";
+import Link from "@/components/LocLink";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { getProfile, P } from "@/lib";
+import type { Locale } from "@/lib/i18n";
+import { getT } from "@/lib/messages";
 
-const items: [string, string][] = [
-  ["About", "/about/"], ["Services", "/services/"], ["PlayXploration", "/playxploration/"], ["Foundation Years First", "/foundation-years-first/"],
-  ["Blog", "/blog/"], ["Gallery", "/gallery/"], ["Newsletter", "/writing/"], ["Speaking", "/speaking/"], ["FAQ", "/faq/"], ["Contact", "/contact/"],
+const cols: { title: string; links: [string, string][] }[] = [
+  { title: "Families and educators", links: [["For parents", "/for-parents/"], ["For educators", "/for-educators/"], ["Explore by age", "/ages/"], ["Articles", "/articles/"], ["Today's Play", "/play/"], ["Anubhuti letter", "/anubhuti/"]] },
+  { title: "Work with me", links: [["Work with schools", "/work-with-schools/"], ["PlayXploration", "/playxploration/"], ["Speaking", "/speaking/"], ["School self-check", "/self-check/"], ["Contact", "/contact/"]] },
+  { title: "About", links: [["About Tripta", "/about/"], ["Foundation Years First", "/foundation-years-first/"], ["Gallery", "/gallery/"], ["FAQ", "/faq/"], ["How we write", "/how-we-write/"]] },
 ];
 
-export default function Footer() {
+export default function Footer({ locale }: { locale: Locale }) {
+  const t = getT(locale);
+  const p = getProfile(locale);
   return (
-    <footer className="on-dark relative overflow-hidden bg-teal-950 text-ivory/80">
-      <div className="rule-gold" />
-      <div className="mx-auto grid max-w-7xl gap-14 px-6 pt-20 md:grid-cols-12">
-        <div className="md:col-span-5">
-          <p className="font-serif text-4xl font-light leading-tight text-ivory">The years that shape <span className="italic text-gold-light">everything that follows.</span></p>
-          <Link href="/contact/" className="btn-gold mt-10">Work with Tripta</Link>
+    <footer className="mt-24 bg-night text-white">
+      <div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 md:grid-cols-12">
+        <div className="md:col-span-4">
+          <p className="text-3xl font-extrabold leading-tight">{t("The years that shape")} <span className="text-saffron">{t("everything that follows.")}</span></p>
+          <p className="mt-5 text-sm text-white/75">{p.person.role}</p>
+          <Link href="/contact/" className="btn btn-primary mt-8">{t("Book a school conversation")}</Link>
+          <div className="mt-8"><LanguageSwitcher /></div>
         </div>
-        <nav aria-label="Footer" className="md:col-span-4">
-          <p className="label mb-5">Explore</p>
-          <ul className="grid grid-cols-2 gap-x-6">
-            {items.map(([l, h]) => <li key={h}><Link href={h} className="inline-flex min-h-[44px] items-center text-sm transition hover:text-gold-light">{l}</Link></li>)}
-          </ul>
+        <nav aria-label={t("Footer")} className="grid gap-8 sm:grid-cols-3 md:col-span-8">
+          {cols.map((c) => (
+            <div key={c.title}>
+              <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-sun">{t(c.title)}</p>
+              <ul className="mt-3">
+                {c.links.map(([l, h]) => <li key={h}><Link href={h} className="inline-flex min-h-[40px] items-center text-sm text-white/85 transition hover:text-saffron">{t(l)}</Link></li>)}
+              </ul>
+            </div>
+          ))}
         </nav>
-        <div className="md:col-span-3">
-          <p className="label mb-5">Connect</p>
-          <a href={P.person.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[44px] items-center text-sm transition hover:text-gold-light">LinkedIn ↗</a>
-          <p className="mt-2 text-sm">{P.person.location}</p>
+      </div>
+      <div className="border-t border-white/10">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-6 py-5 text-xs text-white/65">
+          <span>© {new Date().getFullYear()} Tripta Tarunesh. {t("Foundation Years First is an initiative of Educational Mentoring India.")}</span>
+          <a href={P.person.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[40px] items-center hover:text-saffron">LinkedIn ↗</a>
         </div>
       </div>
-      <p aria-hidden className="select-none whitespace-nowrap pt-16 text-center font-serif text-[13vw] font-light italic leading-[0.9] text-ivory/[0.06]">Tripta Tarunesh</p>
-      <div className="border-t border-gold/20 py-6 text-center text-xs tracking-wider text-ivory/60">© {new Date().getFullYear()} Tripta Tarunesh. All rights reserved.</div>
     </footer>
   );
 }

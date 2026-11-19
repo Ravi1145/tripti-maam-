@@ -1,15 +1,28 @@
-# Tripta Tarunesh - personal website
+# Tripta Tarunesh: website
 
-Next.js 14 + Tailwind + Framer Motion, with a Decap CMS admin at `/admin/`.
-All content is plain files in this repo (no database):
+Next.js 14 + Tailwind, with a Decap CMS admin at `/admin/`. Light "Warm & Bright" design (warm paper, saffron buttons, colour-coded tints, Plus Jakarta Sans).
+All content is plain files in this repo (no database).
 
-| What | Where | Edited in admin under |
-|------|-------|-----------------------|
-| Blog posts | `content/blog/*.md` | Blog posts |
-| Events & gallery photos | `content/events/*.md` | Events & gallery |
-| FAQ | `content/faq.json` | FAQ |
-| Every other text (hero, about, services, contact...) | `data/profile.json` | Site text & settings |
-| Uploaded images | `public/uploads/` | any image field |
+## Where things live (all editable in the admin)
+
+| What | File | Admin section |
+|------|------|---------------|
+| Articles (question-led library) | `content/articles/*.md` | Articles |
+| The 8 age guides and Today's Play | `content/ages.json` | Age guides and Today's Play |
+| School self-check questions | `content/selfcheck.json` | School self-check |
+| Events and gallery photos | `content/events/*.md` | Events and gallery |
+| FAQ | `content/faq.json` | Questions (FAQ) |
+| All other text (home, about, schools, PlayXploration, contact...) | `data/profile.json` | Site text and settings |
+| Photos | `public/photos/` (web-ready, graded) and `public/uploads/` (admin uploads) | any image field |
+
+## Pages
+Home · For parents · For educators · Explore by age (+ 8 guides) · Articles (+ filter) · Today's Play · Anubhuti letter · How we write · About · Work with schools · PlayXploration · Foundation Years First · School self-check · Speaking · Gallery · FAQ · Contact.
+Old addresses redirect: `/services`, `/blog`, `/writing`.
+
+## The "Draft" ribbon (important)
+Drafted content (age guides, articles, self-check) shows a yellow **"Draft, waiting for Tripta's review"** ribbon until it is approved.
+To approve: open the item in the admin and tick **"Approved by Tripta"** (`reviewed: true`). Nothing child-development related should go public before that.
+Placeholders that start with `TODO: confirm with Tripta` are hidden from visitors automatically (email, phone, links).
 
 ## Run
 ```bash
@@ -17,46 +30,30 @@ npm install
 npm run dev      # http://localhost:3000
 npm run build    # production build
 ```
+Do not run `npm run build` while `npm run dev` is running (they share the `.next` folder). Stop dev first.
 
 ## Use the admin locally (no login, edits files on disk)
-Open two terminals:
 ```bash
 npm run dev
-npm run cms      # starts decap-server (downloads the decap-server package on first run)
+npm run cms      # starts decap-server (downloads the package on first run)
 ```
-Then open http://localhost:3000/admin/ and click "Login with GitHub" (local mode skips the login).
+Open http://localhost:3000/admin/.
 
-## Go live: admin login for Tripta (one-time setup, about 10 minutes)
-1. Push this folder to a GitHub repository.
-2. `public/admin/config.yml` already points at `Ravi1145/tripti-maam-`; change `backend.repo` if you move the repository.
-3. Create a GitHub OAuth App: GitHub > Settings > Developer settings > OAuth Apps > New.
-   - Homepage URL: your live URL
-   - Authorization callback URL: `https://YOUR-DOMAIN/api/callback`
-4. In Vercel > Project > Settings > Environment Variables add:
-   - `OAUTH_GITHUB_CLIENT_ID`
-   - `OAUTH_GITHUB_CLIENT_SECRET`
-   - `NEXT_PUBLIC_FORM_ENDPOINT` (contact form, e.g. a Formspree URL)
-5. Redeploy. Tripta signs in at `https://YOUR-DOMAIN/admin/` with a GitHub account that has write access to the repo.
-   Saving or publishing in the admin commits to GitHub and Vercel republishes the site in about a minute.
-
-Only people with write access to the repository can log in to the admin.
-
-## SEO already built in
-- Per-page titles, descriptions, canonical URLs, Open Graph and Twitter cards
-- JSON-LD: Person, Organization, Blog / BlogPosting, BreadcrumbList, FAQPage, Event, ImageGallery
-- `/sitemap.xml` (includes every post and event), `/robots.txt` (blocks `/admin/`, `/api/`), `/feed.xml` (RSS)
-- Set the real domain in `data/profile.json` > `site.url` (or in the admin under Site text & settings)
-- For each blog post use the "Short summary" (140-160 characters) and an optional SEO title / description
-
-## Photos
-- Her portrait: upload in the admin, then set `person.photo` (for example `/uploads/tripta.jpg`).
-- Event photos: Events & gallery > open an event > add photos with captions (captions double as alt text).
+## Go live (one-time setup, about 10 minutes)
+1. Push this folder to GitHub (already: `Ravi1145/tripti-maam-`).
+2. Import it at vercel.com/new (Next.js, nothing else to set).
+3. Create a GitHub OAuth App (GitHub > Settings > Developer settings > OAuth Apps). Homepage URL: your live URL. Callback: `https://YOUR-DOMAIN/api/callback`.
+4. In Vercel > Settings > Environment Variables add `OAUTH_GITHUB_CLIENT_ID`, `OAUTH_GITHUB_CLIENT_SECRET`, and `NEXT_PUBLIC_FORM_ENDPOINT` (e.g. a Formspree URL; it powers the enquiry form and the Anubhuti sign-up).
+5. Set `site.url` in `data/profile.json` to the real domain. Redeploy.
+6. Tripta signs in at `https://YOUR-DOMAIN/admin/` with a GitHub account that has write access.
 
 ## Pre-launch checklist
-- [ ] Tripta approves all text, photos and named people/organisations
-- [ ] Replace every `TODO: confirm with Tripta` (list is in `data/profile.json` > `todo`)
-- [ ] Replace the two summary blog posts with her full articles
-- [ ] Real domain set; OAuth app and env variables added; admin login tested
-- [ ] Add event photos and portrait
-- [ ] Submit `/sitemap.xml` to Google Search Console
-- [ ] Run Lighthouse on the live URL
+- [ ] Tripta approves every drafted article, age guide, play idea and self-check question (tick "Approved by Tripta")
+- [ ] Source lines under each article checked and linked
+- [ ] Confirm: spelling "Lakshmi Annapurna Chintaluri", and "nearly two decades" wording
+- [ ] Email, phone, newsletter link filled in (`data/profile.json`)
+- [ ] Every photo approved; consent confirmed for any photo with children
+- [ ] Testimonials added (section stays out until real quotes exist)
+- [ ] Event names and dates added in Events
+- [ ] Real domain set, OAuth app and env variables added, admin login tested
+- [ ] Lighthouse run on the live URL; submit `/sitemap.xml` to Google Search Console

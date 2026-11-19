@@ -1,0 +1,25 @@
+{
+  "reviewed": false,
+  "title": "Is our Foundation Years programme on track?",
+  "intro": "Ten statements, about five minutes. Answer for your school on an ordinary day. This is a reflection tool to start a conversation. It is not an assessment of your school. Your answers stay in your browser and are not sent anywhere.",
+  "scale": ["Rarely", "Sometimes", "Often", "Almost always"],
+  "areas": [
+    { "key": "relationships", "label": "Relationships", "tint": "coral", "advice": "Strengthening relationships often starts with routines at arrival, transitions and moments of need. A short walk-through of the school day, looking at the child, usually shows where to begin." },
+    { "key": "play", "label": "Play", "tint": "sun", "advice": "Protect long, uninterrupted play and watch it before stepping in. Teachers who learn what to look for in play tend to see much more of what children can do." },
+    { "key": "language", "label": "Language", "tint": "sky", "advice": "Pausing, waiting and using children's home language give every child more room to speak. Small changes in how adults ask questions can make a large difference." },
+    { "key": "thinking", "label": "Thinking", "tint": "violet", "advice": "Asking children to explain how they worked something out, and treating second tries as normal, makes thinking visible. Thinking routines are a practical place to start." },
+    { "key": "seeing", "label": "Seeing and planning", "tint": "mint", "advice": "Write down a little of what you see, often, and use it to plan the next experience. Leaders who regularly look at what children experience, not only at documents, get a truer picture." }
+  ],
+  "questions": [
+    { "area": "relationships", "text": "When a child arrives, an adult greets them by name and notices how they seem to be feeling." },
+    { "area": "relationships", "text": "Children know which adult to go to when they need help, and they do." },
+    { "area": "play", "text": "Children have long stretches of uninterrupted time to choose and play." },
+    { "area": "play", "text": "Adults watch play for a while before stepping in or directing it." },
+    { "area": "language", "text": "Adults pause and wait for children's answers before moving on." },
+    { "area": "language", "text": "Children can use their home language in school and it is welcomed." },
+    { "area": "thinking", "text": "Children are asked to explain or show how they worked something out." },
+    { "area": "thinking", "text": "A second try, or a mistake, is treated as a normal part of learning." },
+    { "area": "seeing", "text": "Teachers write down what they see children doing, and use it to plan what comes next." },
+    { "area": "seeing", "text": "School leaders regularly spend time in classrooms looking at what children experience, not only at documents." }
+  ]
+}

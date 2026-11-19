@@ -16,31 +16,112 @@ public_folder: /uploads
 locale: en
 
 collections:
-  # ------------------------------------------------------------------ BLOG
-  - name: blog
-    label: Blog posts
-    label_singular: Blog post
-    folder: content/blog
+  # --------------------------------------------------------------- ARTICLES
+  - name: articles
+    label: Articles
+    label_singular: Article
+    folder: content/articles
     extension: md
     create: true
     slug: "{{slug}}"
     summary: "{{title}} - {{date}}"
     sortable_fields: [date, title]
     fields:
-      - { label: Title, name: title, widget: string }
+      - { label: Title (best as a question from everyday life), name: title, widget: string }
       - { label: Publish date, name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
-      - { label: Short summary (shown on cards and in Google), name: excerpt, widget: text, hint: "Aim for 140-160 characters." }
-      - { label: Cover image, name: cover, widget: image, required: false }
+      - { label: Short summary (cards and Google, 140-160 characters), name: excerpt, widget: text }
+      - label: Topic
+        name: ability
+        widget: select
+        options:
+          - { label: Communication and language, value: communication-and-language }
+          - { label: Thinking and problem-solving, value: thinking-and-problem-solving }
+          - { label: Relationships and participation, value: relationships-and-participation }
+          - { label: Attention and persistence, value: attention-and-persistence }
+          - { label: Early reading, writing and maths, value: early-reading-writing-and-maths }
+          - { label: Big ideas, value: big-ideas }
+      - label: Ages this article is for
+        name: ages
+        widget: select
+        multiple: true
+        required: false
+        options:
+          - { label: Birth to 12 months, value: birth-to-12-months }
+          - { label: 1 to 2 years, value: 1-to-2 }
+          - { label: 2 to 3 years, value: 2-to-3 }
+          - { label: 3 to 4 years, value: 3-to-4 }
+          - { label: 4 to 5 years, value: 4-to-5 }
+          - { label: 5 to 6 years, value: 5-to-6 }
+          - { label: 6 to 7 years, value: 6-to-7 }
+          - { label: 7 to 8 years, value: 7-to-8 }
       - { label: Tags, name: tags, widget: list, required: false, default: [] }
       - { label: Author, name: author, widget: string, default: Tripta Tarunesh }
-      - { label: Draft (hide from website), name: draft, widget: boolean, default: false }
-      - { label: SEO title (optional), name: seoTitle, widget: string, required: false, hint: "Leave empty to use the post title." }
+      - { label: Approved by Tripta (turns off the "Draft" ribbon), name: reviewed, widget: boolean, default: false }
+      - { label: Hide from website (draft), name: draft, widget: boolean, default: false }
+      - { label: SEO title (optional), name: seoTitle, widget: string, required: false }
       - { label: SEO description (optional), name: seoDescription, widget: text, required: false }
-      - { label: Body, name: body, widget: markdown }
+      - { label: Body, name: body, widget: markdown, hint: "Use headings: A familiar moment, One thing to try, What to notice, Further reading." }
+
+  # ------------------------------------------------------------ AGE GUIDES
+  - name: ages
+    label: Age guides and Today's Play
+    files:
+      - name: ages
+        label: The eight age guides
+        file: content/ages.json
+        format: json
+        fields:
+          - { label: Approved by Tripta (turns off the "Draft" ribbon), name: reviewed, widget: boolean, default: false }
+          - label: Guides
+            name: items
+            widget: list
+            summary: "{{fields.label}}: {{fields.title}}"
+            fields:
+              - { label: Web address part (do not change), name: slug, widget: string }
+              - { label: Age label, name: label, widget: string }
+              - { label: Short line, name: short, widget: string }
+              - { label: Colour, name: stage, widget: select, options: [coral, sun, mint, violet, sky, saffron] }
+              - { label: Title, name: title, widget: string }
+              - { label: A familiar moment, name: moment, widget: text }
+              - { label: "Try this today: title", name: tryTitle, widget: string }
+              - { label: "Try this today: what to do (also used by Today's Play)", name: tryText, widget: text }
+              - { label: What to look for next, name: lookText, widget: text }
+              - { label: Share what you notice, name: shareText, widget: text }
+              - { label: Article to read next (article file name without .md), name: article, widget: string }
+
+  # ---------------------------------------------------------- SELF-CHECK
+  - name: selfcheck
+    label: School self-check
+    files:
+      - name: selfcheck
+        label: Self-check questions
+        file: content/selfcheck.json
+        format: json
+        fields:
+          - { label: Approved by Tripta (turns off the "Draft" ribbon), name: reviewed, widget: boolean, default: false }
+          - { label: Title, name: title, widget: string }
+          - { label: Introduction, name: intro, widget: text }
+          - { label: Answer choices (4, from lowest to highest), name: scale, widget: list, field: { label: Choice, name: c, widget: string } }
+          - label: Areas
+            name: areas
+            widget: list
+            summary: "{{fields.label}}"
+            fields:
+              - { label: Key (do not change), name: key, widget: string }
+              - { label: Label, name: label, widget: string }
+              - { label: Colour, name: tint, widget: select, options: [coral, sun, mint, violet, sky, saffron] }
+              - { label: Advice shown when this is the area to start with, name: advice, widget: text }
+          - label: Questions
+            name: questions
+            widget: list
+            summary: "{{fields.text}}"
+            fields:
+              - { label: Area key (relationships, play, language, thinking, seeing), name: area, widget: string }
+              - { label: Statement, name: text, widget: text }
 
   # ---------------------------------------------------------------- EVENTS
   - name: events
-    label: Events & gallery
+    label: Events and gallery
     label_singular: Event
     folder: content/events
     extension: md
@@ -49,7 +130,7 @@ collections:
     summary: "{{title}} - {{date}}"
     fields:
       - { label: Event name, name: title, widget: string }
-      - { label: Date, name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+      - { label: Date, name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD", required: false }
       - { label: Location, name: location, widget: string, required: false }
       - { label: Summary, name: summary, widget: text }
       - { label: Cover image, name: cover, widget: image, required: false }
@@ -61,12 +142,12 @@ collections:
         fields:
           - { label: Photo, name: image, widget: image }
           - { label: Caption (also used as alt text), name: caption, widget: string, required: false }
-      - { label: Draft (hide from website), name: draft, widget: boolean, default: false }
+      - { label: Hide from website (draft), name: draft, widget: boolean, default: false }
       - { label: Details, name: body, widget: markdown, required: false }
 
   # ------------------------------------------------------------------- FAQ
   - name: faq
-    label: FAQ
+    label: Questions (FAQ)
     files:
       - name: faq
         label: Frequently asked questions
@@ -83,143 +164,126 @@ collections:
 
   # --------------------------------------------------- SITE TEXT & SETTINGS
   - name: site
-    label: Site text & settings
+    label: Site text and settings
     files:
-      - name: images
-        label: Site photos (replace the illustrations)
-        file: data/images.json
-        format: json
-        fields:
-          - { label: "Home page - main photo (children playing / building)", name: hero, widget: image, required: false }
-          - { label: "Classroom photo (teacher with children)", name: classroom, widget: image, required: false }
-          - { label: "Play photo (PlayXploration)", name: play, widget: image, required: false }
-          - { label: "Reading photo", name: reading, widget: image, required: false }
-          - { label: "Outdoor play photo", name: outdoor, widget: image, required: false }
-          - { label: "Workshop / teacher training photo", name: workshop, widget: image, required: false }
-          - { label: "Speaking / stage photo", name: stage, widget: image, required: false }
-          - { label: "About page photo", name: about, widget: image, required: false }
       - name: profile
         label: All website text
         file: data/profile.json
         format: json
         fields:
-          - label: Site (SEO)
+          - label: Site (Google)
             name: site
             widget: object
             fields:
               - { label: Live website URL (no trailing slash), name: url, widget: string }
-              - { label: Note, name: urlNote, widget: string, required: false }
               - { label: Browser/Google title, name: title, widget: string }
               - { label: Google description, name: description, widget: text }
-          - label: Person
+          - label: About me (details)
             name: person
             widget: object
             fields:
               - { label: Name, name: name, widget: string }
-              - { label: Headline, name: headline, widget: string }
-              - { label: Roles, name: roles, widget: list, field: { label: Role, name: role, widget: string } }
+              - { label: Role, name: role, widget: string }
               - { label: Location, name: location, widget: string }
               - { label: LinkedIn URL, name: linkedin, widget: string }
-              - { label: Email, name: email, widget: string }
-              - { label: Phone, name: phone, widget: string }
-              - { label: Portrait photo path (e.g. /uploads/tripta.jpg), name: photo, widget: string, hint: "Upload via the Media tab, then paste the path here." }
-              - { label: Followers, name: followers, widget: string }
-              - { label: Skills, name: skills, widget: list, field: { label: Skill, name: skill, widget: string } }
-          - label: Home page hero
-            name: hero
+              - { label: Email (shown on Contact when filled in), name: email, widget: string }
+              - { label: Phone (shown on Contact when filled in), name: phone, widget: string }
+          - label: Home page
+            name: home
             widget: object
             fields:
               - { label: Small heading, name: eyebrow, widget: string }
-              - { label: Big headline, name: title, widget: string }
-              - { label: Subtitle, name: subtitle, widget: text }
-              - label: Main button
-                name: ctaPrimary
+              - { label: Headline (first part), name: headlineStart, widget: string }
+              - { label: Headline (highlighted part), name: headlineHighlight, widget: string }
+              - { label: Introduction, name: sub, widget: text }
+              - label: Four facts under the buttons
+                name: trust
+                widget: list
+                summary: "{{fields.value}} {{fields.label}}"
+                fields: [{ label: Big text, name: value, widget: string }, { label: Label, name: label, widget: string }]
+              - label: Dark band
+                name: band
                 widget: object
-                fields: [{ label: Text, name: label, widget: string }, { label: Link, name: href, widget: string }]
-              - label: Second button
-                name: ctaSecondary
-                widget: object
-                fields: [{ label: Text, name: label, widget: string }, { label: Link, name: href, widget: string }]
-          - label: Home page numbers
-            name: stats
-            widget: list
-            summary: "{{fields.prefix}}{{fields.value}}{{fields.suffix}} {{fields.label}}"
-            fields:
-              - { label: Text before number, name: prefix, widget: string, required: false }
-              - { label: Number, name: value, widget: number, value_type: int }
-              - { label: Text after number, name: suffix, widget: string, required: false }
-              - { label: Label, name: label, widget: string }
-          - label: About
+                fields: [{ label: Title, name: title, widget: string }, { label: Text, name: text, widget: text }]
+              - label: Four pillars
+                name: pillars
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Text, name: text, widget: string }
+                  - { label: Colour, name: tint, widget: select, options: [coral, sun, sky, violet, mint, saffron] }
+                  - { label: Icon, name: icon, widget: select, options: [heart, blocks, chat, bulb, book, users, eye, compass, star] }
+          - label: About page
             name: about
             widget: object
             fields:
-              - { label: Intro, name: intro, widget: text }
-              - { label: Her question, name: question, widget: string }
-              - { label: The answer, name: answer, widget: text }
-              - { label: Paragraphs, name: paragraphs, widget: list, field: { label: Paragraph, name: p, widget: text } }
-              - { label: Who she wants to work with, name: workWith, widget: text }
-              - label: "Four pillars (keep the titles Relationships, Play, Language, Thinking)"
-                name: pillars
+              - { label: Introduction, name: intro, widget: text }
+              - { label: My story (last paragraph is shown as a large quote), name: story, widget: list, field: { label: Paragraph, name: p, widget: text } }
+              - { label: What I keep learning, name: learning, widget: list, field: { label: Item, name: i, widget: string } }
+              - { label: Recognition, name: recognition, widget: list, field: { label: Award, name: r, widget: string } }
+              - { label: At a glance, name: facts, widget: list, field: { label: Fact, name: f, widget: string } }
+              - { label: Who I work with, name: workWith, widget: text }
+          - label: Work with schools page
+            name: schools
+            widget: object
+            fields:
+              - { label: Introduction, name: intro, widget: text }
+              - label: Offers (keep four, they pair with four photos)
+                name: offers
                 widget: list
-                fields: [{ label: Title, name: title, widget: string }, { label: Text, name: text, widget: string }]
-          - label: Services
-            name: services
-            widget: list
-            summary: "{{fields.title}}"
-            fields: [{ label: Title, name: title, widget: string }, { label: Text, name: text, widget: text }]
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Colour, name: tint, widget: select, options: [violet, coral, sky, sun, mint, saffron] }
+                  - { label: Icon, name: icon, widget: select, options: [book, users, eye, blocks, heart, chat, bulb, compass, star] }
+                  - { label: Text, name: text, widget: text }
+                  - { label: Includes, name: items, widget: list, field: { label: Item, name: i, widget: string } }
+              - label: Three steps
+                name: process
+                widget: list
+                summary: "{{fields.title}}"
+                fields: [{ label: Title, name: title, widget: string }, { label: Text, name: text, widget: text }]
+              - { label: Enquiry invitation, name: cta, widget: text }
           - label: PlayXploration page
             name: playx
             widget: object
             fields:
               - { label: Tagline, name: tagline, widget: string }
-              - { label: Intro, name: intro, widget: text }
-              - { label: Intersections, name: intersections, widget: list, field: { label: Item, name: i, widget: string } }
+              - { label: Introduction, name: intro, widget: text }
               - label: Two lenses
                 name: lenses
                 widget: list
-                fields: [{ label: Title, name: title, widget: string }, { label: Text, name: text, widget: text }]
+                fields:
+                  - { label: Title, name: title, widget: string }
+                  - { label: Text, name: text, widget: text }
+                  - { label: Colour, name: tint, widget: select, options: [coral, violet, sky, sun, mint, saffron] }
               - { label: What play makes visible, name: visible, widget: list, field: { label: Item, name: i, widget: string } }
-          - label: Foundation Years First page
+              - { label: At the intersection of, name: intersections, widget: list, field: { label: Item, name: i, widget: string } }
+          - label: Foundation Years First
             name: fyf
             widget: object
             fields:
               - { label: Title, name: title, widget: string }
-              - { label: Launch line, name: launched, widget: string }
               - { label: By line, name: by, widget: string }
+              - { label: Launch line, name: launched, widget: string }
               - { label: Premise, name: premise, widget: string }
               - { label: Tagline, name: tagline, widget: string }
-              - { label: Intro, name: intro, widget: text }
-              - { label: Goals, name: goals, widget: list, field: { label: Goal, name: g, widget: string } }
-              - { label: Initiative link, name: link, widget: string }
-          - label: Newsletter / writing page
-            name: writing
+              - { label: Introduction, name: intro, widget: text }
+              - { label: Aims, name: goals, widget: list, field: { label: Aim, name: g, widget: string } }
+          - label: Anubhuti (monthly letter)
+            name: newsletter
             widget: object
             fields:
-              - label: Newsletter
-                name: newsletter
-                widget: object
-                fields:
-                  - { label: Name, name: name, widget: string }
-                  - { label: Part, name: part, widget: string }
-                  - { label: Title, name: title, widget: string }
-                  - { label: Summary, name: summary, widget: text }
-                  - { label: Link, name: link, widget: string }
-              - label: Featured post
-                name: featured
-                widget: object
-                fields:
-                  - { label: Title, name: title, widget: string }
-                  - { label: Text, name: text, widget: text }
-                  - { label: Closing question, name: closing, widget: text }
-                  - { label: Hashtags, name: tags, widget: list, field: { label: Tag, name: t, widget: string } }
-              - label: Origin essay
-                name: essay
-                widget: object
-                fields: [{ label: Date, name: date, widget: string }, { label: Title, name: title, widget: string }, { label: Text, name: text, widget: text }]
-          - label: Speaking & recognition page
+              - { label: Name, name: name, widget: string }
+              - { label: Introduction, name: intro, widget: text }
+              - { label: The first letter, name: letter, widget: text }
+              - { label: Newsletter platform link, name: link, widget: string }
+          - label: Speaking page
             name: speaking
             widget: object
             fields:
+              - { label: Topics, name: topics, widget: list, field: { label: Topic, name: t, widget: string } }
               - label: Events
                 name: events
                 widget: list
@@ -229,16 +293,20 @@ collections:
                   - { label: Where, name: where, widget: string }
                   - { label: When, name: when, widget: string }
                   - { label: Text, name: text, widget: text }
-              - { label: Recognition, name: recognition, widget: list, field: { label: Award, name: r, widget: string } }
               - label: Certifications
                 name: certifications
                 widget: list
                 summary: "{{fields.title}}"
                 fields: [{ label: Title, name: title, widget: string }, { label: Organisation, name: org, widget: string }]
+          - { label: How we write (paragraphs, in order), name: howWeWrite, widget: list, field: { label: Paragraph, name: p, widget: text } }
           - label: Contact page
             name: contact
             widget: object
             fields:
-              - { label: Intro, name: intro, widget: text }
-              - { label: Form endpoint (info only; set in Vercel env), name: formEndpoint, widget: string }
-          - { label: Outstanding to-do list, name: todo, widget: list, required: false, field: { label: Item, name: i, widget: string } }
+              - { label: Introduction, name: intro, widget: text }
+              - label: What happens next (three steps)
+                name: next
+                widget: list
+                summary: "{{fields.title}}"
+                fields: [{ label: Title, name: title, widget: string }, { label: Text, name: text, widget: string }]
+          - { label: Outstanding to-do list (not shown to visitors), name: todo, widget: list, required: false, field: { label: Item, name: i, widget: string } }

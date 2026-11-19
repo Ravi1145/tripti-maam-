@@ -1,0 +1,126 @@
+{
+  "site": {
+    "url": "https://www.example.com",
+    "title": "Tripta Tarunesh | How children learn from the start",
+    "description": "I help schools and families understand what children are learning in the Foundation Years, with practical classroom systems, age guides and everyday ideas to try."
+  },
+  "person": {
+    "name": "Tripta Tarunesh",
+    "role": "Director, Educational Research, Educational Mentoring India",
+    "location": "Pune, India. I work across India and the Gulf.",
+    "linkedin": "https://www.linkedin.com/in/triptatarunesh/",
+    "email": "TODO: confirm with Tripta",
+    "phone": "TODO: confirm with Tripta"
+  },
+  "home": {
+    "eyebrow": "Foundation Years and play",
+    "headlineStart": "How children learn",
+    "headlineHighlight": "from the start.",
+    "sub": "I'm Tripta Tarunesh. I work with schools and families to understand what children are learning in the early years, and what the adults around them can do about it.",
+    "trust": [
+      { "value": "Nearly 20", "label": "years in Early Childhood Education" },
+      { "value": "12", "label": "organisations I have designed curricula for (10 national, 2 international)" },
+      { "value": "1,950+", "label": "educators in the room at Bett Asia 2026" },
+      { "value": "Harvard", "label": "CEEL and Project Zero, my continued learning" }
+    ],
+    "band": {
+      "title": "The years that shape everything that follows.",
+      "text": "Why do some children thrive in school while others struggle, even when equally capable? I think the answer begins earlier: in relationships, routines, language, play, emotional safety, the way adults respond, and the chances children get to think."
+    },
+    "pillars": [
+      { "title": "Relationships", "text": "A secure, responsive adult is the first curriculum.", "tint": "coral", "icon": "heart" },
+      { "title": "Play", "text": "One of the deepest ways children get ready for school.", "tint": "sun", "icon": "blocks" },
+      { "title": "Language", "text": "Talking, listening and wondering come before worksheets.", "tint": "sky", "icon": "chat" },
+      { "title": "Thinking", "text": "Why? What if? How do I know? Making thinking visible.", "tint": "violet", "icon": "bulb" }
+    ]
+  },
+  "about": {
+    "intro": "I help schools strengthen the Foundation Years, the years that shape everything that follows.",
+    "story": [
+      "For nearly two decades I have worked in Early Childhood Education across India and the Gulf. I have designed curricula, trained educators and worked alongside school teams as they put new ideas into practice.",
+      "The question I keep coming back to is simple: why do some children thrive in school while others struggle, even when they are equally capable? The answer, I believe, begins earlier. It is in relationships, routines, language, play, emotional safety, how adults respond and what chances children get to think.",
+      "Through Educational Mentoring India I work with school owners, principals, academic leaders, coordinators and teachers to build Early Years and K-12 systems that work for real children in real classrooms, not just in documents.",
+      "I translate these ideas into practical classroom systems a teacher can use on a Monday morning with 30 children in front of her."
+    ],
+    "learning": ["Harvard CEEL (Certificate in Early Education Leadership)", "Project Zero: Look, Listen, Interpret and Document", "Project Zero: Thinking Routines", "Project Zero: Let's Play", "Reggio Emilia", "Visible Thinking", "Universal Design for Learning", "Indian knowledge systems", "Developmentally appropriate assessment"],
+    "recognition": ["AWWA Award of Excellence", "Asmita"],
+    "facts": ["Curricula designed for 10 national and 2 international organisations", "Co-developed a Life Skills programme for ages 4 to 16", "Spoke on PlayXploration at Bett Asia 2026 (Kuala Lumpur) to 1,950+ educators"],
+    "workWith": "School leaders who are serious about strengthening the Foundation Years, building teacher capacity, and creating systems that genuinely serve children, not just satisfy compliance."
+  },
+  "schools": {
+    "intro": "I work with school teams through Educational Mentoring India. We start with the questions your team is already facing, look at what children actually experience during the school day, agree a change you can put into practice, and plan how to see what happens next.",
+    "offers": [
+      { "title": "Curriculum and classroom practice", "tint": "violet", "icon": "book", "text": "Curriculum design for Early Years and K-12, built so teachers can use it in real classrooms. Aligned with NEP 2020, ECCE policy and NCF-FS.", "items": ["Curriculum design", "School improvement planning"] },
+      { "title": "Teachers and leaders", "tint": "coral", "icon": "users", "text": "Practical professional development for teachers, and mentoring for owners, principals and academic leaders who are driving change.", "items": ["Teacher development", "Leadership mentoring"] },
+      { "title": "Observation and assessment", "tint": "sky", "icon": "eye", "text": "Helping teams look, listen, interpret and document what children are doing, and use it to plan the next experience or talk with families.", "items": ["Classroom observation", "School audits", "Assessment frameworks and documentation"] },
+      { "title": "PlayXploration and inclusion", "tint": "sun", "icon": "blocks", "text": "Play-based learning that makes visible executive function, emotional regulation, curiosity, persistence and collaboration, with inclusion built in.", "items": ["PlayXploration for schools", "Inclusion support"] }
+    ],
+    "process": [
+      { "title": "We talk", "text": "You tell me what your team is facing. We agree what is worth looking at." },
+      { "title": "We look", "text": "We observe what children experience across the day: classrooms, routines, play, transitions." },
+      { "title": "We change one thing", "text": "We agree a change your team can put into practice, and how you will observe what happens." }
+    ],
+    "cta": "Tell me about your school, the age group and what you would like to work on."
+  },
+  "playx": {
+    "tagline": "The playground was full of data. We were just calling it play.",
+    "intro": "PlayXploration helps schools reimagine play-based learning as one of the deepest ways children build school readiness. It makes visible executive function, emotional regulation, curiosity, confidence, persistence, collaboration, language, problem-solving and meaning-making.",
+    "lenses": [
+      { "title": "Play as activity", "text": "Reveals leadership, resilience, collaboration, self-regulation and spatial intelligence.", "tint": "coral" },
+      { "title": "Play as pedagogy", "text": "Play designed and observed as a way of teaching and learning.", "tint": "violet" }
+    ],
+    "visible": ["Executive function", "Emotional regulation", "Curiosity", "Confidence", "Persistence", "Collaboration", "Language", "Problem-solving", "Meaning-making"],
+    "intersections": ["Play-based learning", "Child development", "Teacher observation", "Developmental domains", "Inclusion", "Parent partnership", "School leadership", "AI-supported analysis", "Future readiness"]
+  },
+  "fyf": {
+    "title": "Foundation Years First",
+    "by": "An initiative of Educational Mentoring India",
+    "launched": "Launched 3 October 2026",
+    "premise": "One child. Many perspectives. One foundation.",
+    "tagline": "Different gears. One child. One foundation.",
+    "intro": "A space that connects child development, research, policy, pedagogy, family perspectives and classroom reality. Start with an age or a question from your day.",
+    "goals": ["Know more", "Understand why", "Relate evidence to real children", "Question inherited practices", "Connect perspectives that rarely meet"]
+  },
+  "newsletter": {
+    "name": "Anubhuti",
+    "intro": "A monthly letter for families and educators. One familiar moment from a child's day, one question it raises, and one thing to try.",
+    "letter": "Hello, and welcome. Each month I will share one familiar moment from a child's day, the question it raises, and something you can try. To begin: the next time a lid, a zip or a block tower needs help, notice what the child has already tried. Offer help with one part, then give them another turn. What do they do next?",
+    "link": "TODO: confirm with Tripta - newsletter platform link"
+  },
+  "speaking": {
+    "topics": ["Play, school readiness and what children learn in play", "Observing children: look, listen, interpret, document", "AI readiness begins in the Foundation Years", "How schools and families can work together in the early years"],
+    "events": [
+      { "title": "Bett Asia 2026", "where": "Mandarin Oriental, Kuala Lumpur", "when": "23-24 September 2026", "text": "I spoke on the strategic impact of PlayXploration to 1,950+ educators, government representatives and education leaders, appeared at the Classroom Theatre with Lakshmi Annapurna Chintaluri, and joined panels and roundtables." },
+      { "title": "Yayasan Generasi Gemilang", "where": "Malaysia", "when": "October 2026", "text": "A conversation about the #KitaMain parent-support programme, and how EMI's play, educator-mentoring and observation experience could support their work." }
+    ],
+    "certifications": [
+      { "title": "Look, Listen, Interpret and Document", "org": "Project Zero, Harvard Graduate School of Education" },
+      { "title": "Thinking Routines: The Power of Making Thinking Visible", "org": "Project Zero, Harvard Graduate School of Education" },
+      { "title": "Let's Play: Teaching Strategies for Playful Learning", "org": "Project Zero, Harvard Graduate School of Education" }
+    ]
+  },
+  "howWeWrite": [
+    "Every article starts with a question from everyday life and offers something specific to try.",
+    "Illustrative moments help us think about a choice a child or an adult might make. Where something comes from a real classroom, we say so. Photographs on this site are real, and where a photo only illustrates a scene, the caption says that.",
+    "Articles point to developmental and educational sources where relevant. These are suggestions for further reading, not medical advice. If you are worried about your child's development, please talk to your paediatrician or a qualified specialist.",
+    "Foundation Years First is an initiative of Educational Mentoring India, written by Tripta Tarunesh for families and educators."
+  ],
+  "contact": {
+    "intro": "Tell me about your school or event, the age group and what you would like to work on.",
+    "next": [
+      { "title": "You send a note", "text": "A few lines is plenty." },
+      { "title": "I reply personally", "text": "We find a time to talk." },
+      { "title": "We decide what to look at", "text": "And whether working together makes sense." }
+    ]
+  },
+  "todo": [
+    "Email, phone and WhatsApp",
+    "Newsletter platform link and form endpoint (NEXT_PUBLIC_FORM_ENDPOINT)",
+    "Testimonials (name, role, school) and school/partner logos",
+    "Career timeline and education dates",
+    "Confirm spelling: Lakshmi Annapurna Chintaluri (clone used Chitaluri)",
+    "Confirm experience wording: 'nearly two decades' vs 'more than two decades'",
+    "Approve every drafted article, age guide, play idea and self-check question",
+    "Approve each photo used (consent for any photo with children)"
+  ]
+}

@@ -1,35 +1,39 @@
 import type { Config } from "tailwindcss";
 
-// "Quiet Luxury" palette. Token names are kept from earlier versions so every page re-skins at once:
-//   ivory = stone paper, teal-* = bottle green, gold = brushed brass, ink = green-black.
+/**
+ * "Warm & Bright" palette (inspired by the pattern of kinedu.com, with our own colours):
+ * warm paper, one action colour (saffron) and soft colour-coded tints that mark sections.
+ * Every text/background pair used on the site meets WCAG AA (4.5:1).
+ */
 const config: Config = {
   content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        ivory: "#F6F1E7",
-        cream: "#ECE4D4",
-        teal: { 950: "#0A1F1B", 900: "#12332C", 700: "#1F5A4E", 500: "#4E8A7A", 100: "#DCE7E1" },
-        gold: { DEFAULT: "#B8975A", light: "#D9C08A", dark: "#7A5F2A" },
-        coral: "#8C3B2E",
-        pink: { DEFAULT: "#D9B8B0", soft: "#EBD9D3" },
-        mint: { DEFAULT: "#9DB8A9", soft: "#DCE7E1" },
-        ink: "#14201D",
+        paper: { DEFAULT: "#FBFAF8", 2: "#F4F2EC" },
+        ink: { DEFAULT: "#1A1D2E", soft: "#4A4F66" },
+        night: "#16133A",
+        saffron: { DEFAULT: "#FF8A1F", hover: "#F57A08", deep: "#B84A00", tint: "#FFF0DF" },
+        violet: { DEFAULT: "#6D5DF5", deep: "#4A3BD1", tint: "#EEECFF" },
+        coral: { DEFAULT: "#FF6B6B", deep: "#C23A3A", tint: "#FFECEC" },
+        sky: { DEFAULT: "#2B8BE4", deep: "#1763B0", tint: "#E6F2FD" },
+        sun: { DEFAULT: "#FFC033", deep: "#8A5A00", tint: "#FFF6DB" },
+        mint: { DEFAULT: "#22B07D", deep: "#0E7A54", tint: "#E3F6EE" },
+        line: "#E7E3DA",
       },
-      fontFamily: {
-        serif: ["var(--font-serif)", "Georgia", "serif"],
-        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+      fontFamily: { sans: ["var(--font-sans)", "system-ui", "sans-serif"] },
+      borderRadius: { card: "28px", pill: "999px" },
+      boxShadow: {
+        soft: "0 10px 40px -18px rgba(26,29,46,.22)",
+        lift: "0 22px 50px -20px rgba(26,29,46,.30)",
+        glow: "0 12px 30px -10px rgba(255,138,31,.55)",
       },
       keyframes: {
-        float: { "0%,100%": { transform: "translateY(0)" }, "50%": { transform: "translateY(-14px)" } },
-        marquee: { "0%": { transform: "translateX(0)" }, "100%": { transform: "translateX(-50%)" } },
-        spinslow: { to: { transform: "rotate(360deg)" } },
+        orb1: { "0%,100%": { transform: "translate(0,0) scale(1)" }, "50%": { transform: "translate(18px,-26px) scale(1.06)" } },
+        orb2: { "0%,100%": { transform: "translate(0,0) scale(1)" }, "50%": { transform: "translate(-22px,20px) scale(1.08)" } },
+        sweep: { from: { transform: "scaleX(0)" }, to: { transform: "scaleX(1)" } },
       },
-      animation: {
-        float: "float 9s ease-in-out infinite",
-        marquee: "marquee 60s linear infinite",
-        spinslow: "spinslow 60s linear infinite",
-      },
+      animation: { orb1: "orb1 16s ease-in-out infinite", orb2: "orb2 20s ease-in-out infinite", sweep: "sweep .9s .35s cubic-bezier(.22,1,.36,1) both" },
     },
   },
   plugins: [],

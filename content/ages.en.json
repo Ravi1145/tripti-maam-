@@ -1,0 +1,109 @@
+{
+  "reviewed": false,
+  "items": [
+    {
+      "slug": "birth-to-12-months",
+      "label": "Birth to 12 months",
+      "short": "Sounds, looks and turns",
+      "stage": "coral",
+      "title": "First conversations",
+      "moment": "You are changing a nappy or getting your baby dressed, and you say a few familiar words and then stop. Your baby looks at your face, makes a sound or moves. That is a turn in a conversation.",
+      "tryTitle": "Say it, then wait",
+      "tryText": "Pick one short, familiar phrase. Say it, wait a few slow seconds, then answer whatever your baby does with your voice, your face or a smile.",
+      "lookText": "What does your baby do first when you pause: look at you, make a sound, move or go still? Notice what comes first, and what changes the next time.",
+      "shareText": "Let another caring adult try the same game. What stays the same, and what changes?",
+      "article": "before-they-speak"
+    },
+    {
+      "slug": "1-to-2",
+      "label": "1 to 2 years",
+      "short": "Reaching, turning and trying",
+      "stage": "sun",
+      "title": "Trying things out",
+      "moment": "Your toddler is pressing a lid onto a box. One corner keeps lifting. They turn the box, try again, then push it towards you.",
+      "tryTitle": "Give them the next turn",
+      "tryText": "Sit on the floor with two large, light containers and their lids. Let your child choose one. Give them time to try again before you help, and when they ask, help with just one part.",
+      "lookText": "What changes on the second try: the way they hold it, which corner they press, or how clearly they ask you for help?",
+      "shareText": "Say what you saw in a few words: 'You held the box with one hand and turned the lid with the other.'",
+      "article": "lid-wont-fit"
+    },
+    {
+      "slug": "2-to-3",
+      "label": "2 to 3 years",
+      "short": "Taking a part in daily routines",
+      "stage": "sun",
+      "title": "Doing things together",
+      "moment": "You are setting the table. Your child wants to carry the cups, even though you could do it in half the time.",
+      "tryTitle": "One small job",
+      "tryText": "Give your child one safe job inside a routine: carrying an unbreakable cup, choosing where the spoon goes, or wiping one spot. Let them finish it their way.",
+      "lookText": "Do they copy what you do, add a step of their own, or look to you to check? Each one tells you something different.",
+      "shareText": "Name the job when it is done: 'You put every cup on the table.' Children like to hear what they did.",
+      "article": "helping-at-home"
+    },
+    {
+      "slug": "3-to-4",
+      "label": "3 to 4 years",
+      "short": "Watching, joining and taking turns",
+      "stage": "mint",
+      "title": "Finding a way into play",
+      "moment": "At a gathering, your child stands at the edge of a group of children playing, close enough to see everything and not yet part of it.",
+      "tryTitle": "Offer one small way in",
+      "tryText": "Stand near and say what the others are doing in a few words: 'They are filling the bucket.' Then offer one small way in: 'They might need someone to hold the other handle.' Let your child say yes, or watch a little longer.",
+      "lookText": "Does your child watch, copy, hold something, or speak first? Watching closely is already taking part.",
+      "shareText": "Tell their teacher or another family member what helped, so the same way in is offered again.",
+      "article": "joining-group-play"
+    },
+    {
+      "slug": "4-to-5",
+      "label": "4 to 5 years",
+      "short": "Imagining, planning and trying again",
+      "stage": "mint",
+      "title": "Making plans together",
+      "moment": "Your child builds a tall tower with blocks, and it falls. They stop, look, and then ask for help or start again.",
+      "tryTitle": "Ask about the plan, not the result",
+      "tryText": "Before building, ask: 'What will you make first?' If it falls, wait. Then ask: 'What would you like to try next?' Give them the choice of whether to rebuild, change it, or do something else.",
+      "lookText": "Do they rebuild the same way, change one piece, or ask for a different block? Each one is a plan changing.",
+      "shareText": "Take a photo of the tower before it falls. Looking at it together later gives your child words for what they planned.",
+      "article": "after-the-tower-falls"
+    },
+    {
+      "slug": "5-to-6",
+      "label": "5 to 6 years",
+      "short": "Retelling and explaining",
+      "stage": "mint",
+      "title": "Making sense of stories",
+      "moment": "You have just read a short story together, and you wonder how much your child has understood.",
+      "tryTitle": "Let them show you",
+      "tryText": "After a short story, ask: 'What happened first?' Let your child answer by telling, pointing at the pictures or using toys. Then ask what a character might have been feeling, and why.",
+      "lookText": "Do they keep the order of events, add how someone felt, or ask you a question of their own?",
+      "shareText": "Use the home language you speak most easily. Children understand stories best in the language they think in.",
+      "article": "understanding-stories"
+    },
+    {
+      "slug": "6-to-7",
+      "label": "6 to 7 years",
+      "short": "Explaining and checking a method",
+      "stage": "violet",
+      "title": "Showing your thinking",
+      "moment": "Your child gives the right answer to a sum, quickly. You want to know how they got there.",
+      "tryTitle": "Show me how",
+      "tryText": "Say 'Show me how you got that', and offer counters, buttons or a pencil. Let them move things or draw while they explain.",
+      "lookText": "Do they count everything from one, count on from a bigger number, or use something they already know? Two children can reach the same answer very differently.",
+      "shareText": "Ask a second child to try a different way and compare. Different ways are worth talking about.",
+      "article": "see-maths-thinking"
+    },
+    {
+      "slug": "7-to-8",
+      "label": "7 to 8 years",
+      "short": "Changing a plan and explaining why",
+      "stage": "violet",
+      "title": "Thinking together",
+      "moment": "You and your child are planning a small task, such as packing a bag for the day. Halfway through, something changes.",
+      "tryTitle": "What if one thing changes?",
+      "tryText": "Plan a small task together, then add one change: 'What if it rains?' Ask them to change the plan and to tell you why they changed it.",
+      "lookText": "Can they say what they changed, in an order that makes sense, and give a reason?",
+      "shareText": "Let them be the one who explains the new plan to someone else at home.",
+      "article": "try-a-different-way"
+    }
+  ]
+}

@@ -1,8 +1,9 @@
 "use client";
-import { AnimatePresence, motion } from "framer-motion";
 import { useId, useMemo, useState } from "react";
+import { useT } from "./I18nProvider";
 
-export default function FaqList({ items }: { items: { question: string; answer: string }[] }) {
+export default function FaqList({ items, searchable = true }: { items: { question: string; answer: string }[]; searchable?: boolean }) {
+  const t = useT();
   const [open, setOpen] = useState<number | null>(0);
   const [q, setQ] = useState("");
   const id = useId();
@@ -10,37 +11,34 @@ export default function FaqList({ items }: { items: { question: string; answer: 
     const t = q.trim().toLowerCase();
     return items.filter((it) => !t || it.question.toLowerCase().includes(t) || it.answer.toLowerCase().includes(t));
   }, [items, q]);
-
   return (
     <div>
-      <label className="block">
-        <span className="sr-only">Search questions</span>
-        <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="Search questions..." className="w-full rounded-sm border border-gold/40 bg-white/80 px-6 py-4 outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/40" />
-      </label>
-      <p className="sr-only" role="status" aria-live="polite">{shown.length} question{shown.length === 1 ? "" : "s"} shown</p>
-      <ul className="mt-8 divide-y divide-gold/30 border-y border-gold/30">
+      {searchable && (
+        <label className="block">
+          <span className="sr-only">{t("Search questions")}</span>
+          <input type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder={t("Search questions...")} className="w-full min-h-[52px] rounded-pill border border-line bg-white px-6 text-base outline-none transition focus:border-violet focus:ring-2 focus:ring-violet/30" />
+        </label>
+      )}
+      <p className="sr-only" role="status" aria-live="polite">{t("{n} questions shown", { n: shown.length })}</p>
+      <ul className="mt-6 space-y-3">
         {shown.map((it, i) => {
           const isOpen = open === i;
           return (
-            <li key={it.question}>
-              <h2>
-                <button id={`${id}-b${i}`} aria-expanded={isOpen} aria-controls={`${id}-p${i}`} onClick={() => setOpen(isOpen ? null : i)} className="flex min-h-[64px] w-full items-center justify-between gap-6 py-6 text-left">
-                  <span className="font-serif text-2xl text-teal-900 md:text-3xl">{it.question}</span>
-                  <span aria-hidden className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-sm border border-gold text-xl text-gold-dark transition duration-300 ${isOpen ? "rotate-45 bg-gold text-teal-950" : ""}`}>+</span>
+            <li key={it.question} className="card overflow-hidden">
+              <h3 className="text-base">
+                <button id={`${id}-b${i}`} aria-expanded={isOpen} aria-controls={`${id}-p${i}`} onClick={() => setOpen(isOpen ? null : i)} className="flex min-h-[64px] w-full items-center justify-between gap-6 px-6 py-5 text-left">
+                  <span className="text-lg font-extrabold md:text-xl">{it.question}</span>
+                  <span aria-hidden className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-xl font-extrabold transition duration-300 ${isOpen ? "rotate-45 bg-saffron text-ink" : "bg-paper-2"}`}>+</span>
                 </button>
-              </h2>
-              <AnimatePresence initial={false}>
-                {isOpen && (
-                  <motion.div id={`${id}-p${i}`} role="region" aria-labelledby={`${id}-b${i}`} initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }} className="overflow-hidden">
-                    <p className="max-w-3xl pb-8 text-lg leading-relaxed text-ink/80">{it.answer}</p>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              </h3>
+              <div id={`${id}-p${i}`} role="region" aria-labelledby={`${id}-b${i}`} hidden={!isOpen}>
+                <p className="px-6 pb-6 text-lg text-ink-soft">{it.answer}</p>
+              </div>
             </li>
           );
         })}
       </ul>
-      {!shown.length && <p className="mt-8 text-ink/70">No questions match your search. Try the contact form instead.</p>}
+      {!shown.length && <p className="mt-6 text-ink-soft">{t("No questions match your search.")}</p>}
     </div>
   );
 }
