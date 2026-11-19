@@ -22,7 +22,7 @@ export default function Parents({ params }: { params: { locale: string } }) {
   const arts = getArticles(locale).filter((a) => a.ages.length).slice(0, 3);
   return (
     <>
-      <PageHero eyebrow={t("For parents · Birth to eight")} title={t("You are already")} highlight={t("teaching them.")} sub={t("A nappy change, setting out cups or telling a story in the language you speak at home can show you what your child is learning. Find your child's age, then choose one thing to notice and one thing to try.")} tint="coral">
+      <PageHero eyebrow={t("For parents · Birth to eight")} title={t("You are already")} highlight={t("teaching them.")} sub={t("A nappy change, setting out cups or telling a story in the language you speak at home can show you what your child is learning. Find your child's age, then choose one thing to notice and one thing to try.")} image="/photos/kid-rug.webp" tint="coral">
         <Link href="/ages/" className="btn btn-primary">{t("Find your child's age")}</Link>
         <Link href="/articles/" className="link-arrow">{t("Start with a question")} <span aria-hidden>→</span></Link>
       </PageHero>

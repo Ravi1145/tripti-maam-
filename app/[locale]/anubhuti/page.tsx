@@ -19,7 +19,7 @@ export default function Anubhuti({ params }: { params: { locale: string } }) {
   const n = getProfile(locale).newsletter;
   return (
     <>
-      <PageHero eyebrow={t("A monthly letter")} title="Anubhuti," highlight={t("one moment a month.")} sub={n.intro} tint="saffron" />
+      <PageHero eyebrow={t("A monthly letter")} title="Anubhuti," highlight={t("one moment a month.")} sub={n.intro} image="/photos/kid-swing.webp" tint="saffron" />
       <section className="mx-auto grid max-w-6xl gap-10 px-6 pb-8 lg:grid-cols-12">
         <Reveal className="lg:col-span-7">
           <article className="card p-8 md:p-12">

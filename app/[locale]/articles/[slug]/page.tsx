@@ -9,6 +9,8 @@ import { getProfile } from "@/lib";
 import { LOCALES, localePath, type Locale } from "@/lib/i18n";
 import { getT } from "@/lib/messages";
 import { pageMeta } from "@/lib/seo";
+import Img from "@/components/Img";
+import { agePhoto } from "@/lib/img";
 
 export const dynamicParams = false;
 export const generateStaticParams = () => LOCALES.flatMap((locale) => articleSlugs().map((slug) => ({ locale, slug })));
@@ -57,6 +59,7 @@ export default function ArticlePage({ params }: { params: { locale: string; slug
           <p className="mt-6 text-sm font-bold text-ink-soft">{t("By {name}", { name: a.author })} · <time dateTime={a.date}>{fmtDate(a.date, locale)}</time> · {t("{n} min read", { n: a.readingMinutes })}</p>
         </div>
       </header>
+      {(a.cover || agePhoto(a.ages[0])) && <div className="mx-auto mb-10 max-w-3xl px-6"><div className="aspect-[16/8] overflow-hidden rounded-card shadow-soft"><Img src={(a.cover || agePhoto(a.ages[0])) as string} alt="" sizes="(min-width: 768px) 48rem, 100vw" /></div></div>}
       <ReviewBanner reviewed={a.reviewed} translated={a.translated} />
       <article className="mx-auto max-w-3xl px-6 pb-16"><div className="prose-fy" dangerouslySetInnerHTML={{ __html: renderMarkdown(a.body) }} /></article>
 

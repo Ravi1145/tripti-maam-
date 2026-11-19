@@ -3,6 +3,8 @@ import Link from "@/components/LocLink";
 import PageHero, { ReviewBanner } from "@/components/PageHero";
 import Reveal from "@/components/Reveal";
 import { getAges } from "@/lib/content";
+import Img from "@/components/Img";
+import { agePhoto } from "@/lib/img";
 import type { Locale } from "@/lib/i18n";
 import { getT } from "@/lib/messages";
 import { pageMeta } from "@/lib/seo";
@@ -26,12 +28,15 @@ export default function Ages({ params }: { params: { locale: string } }) {
           {items.map((a, i) => (
             <li key={a.slug}>
               <Reveal className="h-full" delay={(i % 2) * 0.06}>
-                <Link href={`/ages/${a.slug}/`} className={`card-hover group flex h-full flex-col rounded-card p-8 tint-${a.stage}`}>
+                <Link href={`/ages/${a.slug}/`} className={`card-hover group flex h-full flex-col overflow-hidden rounded-card tint-${a.stage}`}>
+                  {agePhoto(a.slug) && <div className="aspect-[16/9] w-full overflow-hidden"><div className="h-full transition duration-700 group-hover:scale-105"><Img src={agePhoto(a.slug) as string} alt="" sizes="(min-width: 640px) 45vw, 100vw" /></div></div>}
+                  <div className="flex flex-1 flex-col p-8">
                   <span className={`chip chip-${a.stage} self-start bg-white`}>{a.label}</span>
                   <h2 className="mt-5 text-3xl">{a.title}</h2>
                   <p className="mt-1 font-bold text-ink-soft">{a.short}</p>
                   <p className="mt-4 flex-1">{a.moment}</p>
                   <span className="mt-6 inline-flex items-center gap-2 font-extrabold transition group-hover:gap-4">{t("Open the guide")} <span aria-hidden>→</span></span>
+                  </div>
                 </Link>
               </Reveal>
             </li>

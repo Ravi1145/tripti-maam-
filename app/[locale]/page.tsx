@@ -6,6 +6,7 @@ import { Orbs } from "@/components/PageHero";
 import Reveal, { RevealItem } from "@/components/Reveal";
 import { ABILITIES, getAges, getArticles } from "@/lib/content";
 import { getProfile } from "@/lib";
+import { agePhoto } from "@/lib/img";
 import type { Locale } from "@/lib/i18n";
 import { getT } from "@/lib/messages";
 
@@ -54,7 +55,7 @@ export default function Home({ params }: { params: { locale: string } }) {
           <div className="rise lg:col-span-5" style={{ ["--d" as string]: "0.2s" }}>
             <div className="relative">
               <div aria-hidden className="absolute -inset-5 rotate-3 rounded-[2.8rem] bg-saffron-tint" />
-              <div aria-hidden className="absolute -bottom-6 -left-6 h-28 w-28 rounded-full bg-sun/80" />
+              <div className="absolute -bottom-8 -left-6 h-32 w-32 overflow-hidden rounded-full border-4 border-white shadow-lift md:h-36 md:w-36"><Img src="/photos/kid-rug.webp" alt="" sizes="150px" position="55% 58%" /></div>
               <figure className="relative overflow-hidden rounded-card shadow-lift">
                 <div className="aspect-[4/3]"><Img src="/photos/campus.webp" alt={t("Tripta Tarunesh with a colleague on a school campus")} sizes="(min-width: 1024px) 40vw, 100vw" priority position="45% 55%" /></div>
               </figure>
@@ -67,11 +68,11 @@ export default function Home({ params }: { params: { locale: string } }) {
       {/* BAND */}
       <section className="mx-auto max-w-6xl px-6">
         <Reveal>
-          <div className="rounded-[2.2rem] bg-night p-8 text-white md:p-14">
+          <div className="rounded-[2.2rem] bg-night p-6 text-white md:p-9">
             <p className="eyebrow !text-sun">{t("Why this work matters")}</p>
-            <h2 className="mt-4 max-w-3xl text-3xl !text-white md:text-5xl">{h.band.title}</h2>
-            <p className="mt-6 max-w-3xl text-lg text-white/85 md:text-xl">{h.band.text}</p>
-            <Link href="/about/" className="btn btn-light mt-8">{t("Read my story")}</Link>
+            <h2 className="mt-3 max-w-4xl text-2xl !text-white md:text-4xl">{h.band.title}</h2>
+            <p className="mt-4 max-w-4xl text-base text-white/85 md:text-lg">{h.band.text}</p>
+            <Link href="/about/" className="btn btn-light mt-6">{t("Read my story")}</Link>
           </div>
         </Reveal>
       </section>
@@ -103,9 +104,10 @@ export default function Home({ params }: { params: { locale: string } }) {
             {ages.map((a, i) => (
               <li key={a.slug}>
                 <Reveal className="h-full" delay={(i % 4) * 0.06}>
-                  <Link href={`/ages/${a.slug}/`} className={`card-hover group flex h-full min-h-[140px] flex-col justify-between rounded-card p-6 transition tint-${a.stage}`}>
-                    <div><p className="text-xl font-extrabold">{a.label}</p><p className="mt-1 text-sm text-ink-soft">{a.short}</p></div>
-                    <span aria-hidden className="mt-6 flex h-9 w-9 items-center justify-center rounded-full bg-white font-extrabold transition group-hover:translate-x-1">→</span>
+                  <Link href={`/ages/${a.slug}/`} className={`card-hover group flex h-full min-h-[140px] flex-col justify-between overflow-hidden rounded-card transition tint-${a.stage}`}>
+                    {agePhoto(a.slug) && <div className="aspect-[16/10] w-full overflow-hidden"><div className="h-full transition duration-700 group-hover:scale-105"><Img src={agePhoto(a.slug) as string} alt="" sizes="(min-width: 1024px) 22vw, (min-width: 640px) 45vw, 100vw" /></div></div>}
+                    <div className="p-5 pb-0"><p className="text-xl font-extrabold">{a.label}</p><p className="mt-1 text-sm text-ink-soft">{a.short}</p></div>
+                    <span aria-hidden className="m-5 mt-4 flex h-9 w-9 items-center justify-center rounded-full bg-white font-extrabold transition group-hover:translate-x-1">→</span>
                   </Link>
                 </Reveal>
               </li>

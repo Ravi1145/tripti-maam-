@@ -1,5 +1,4 @@
 import Link from "@/components/LocLink";
-import LanguageSwitcher from "./LanguageSwitcher";
 import { getProfile, P } from "@/lib";
 import type { Locale } from "@/lib/i18n";
 import { getT } from "@/lib/messages";
@@ -20,7 +19,6 @@ export default function Footer({ locale }: { locale: Locale }) {
           <p className="text-3xl font-extrabold leading-tight">{t("The years that shape")} <span className="text-saffron">{t("everything that follows.")}</span></p>
           <p className="mt-5 text-sm text-white/75">{p.person.role}</p>
           <Link href="/contact/" className="btn btn-primary mt-8">{t("Book a school conversation")}</Link>
-          <div className="mt-8"><LanguageSwitcher /></div>
         </div>
         <nav aria-label={t("Footer")} className="grid gap-8 sm:grid-cols-3 md:col-span-8">
           {cols.map((c) => (
@@ -36,6 +34,7 @@ export default function Footer({ locale }: { locale: Locale }) {
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-6 py-5 text-xs text-white/65">
           <span>© {new Date().getFullYear()} Tripta Tarunesh. {t("Foundation Years First is an initiative of Educational Mentoring India.")}</span>
+          <span>{t("Child and baby photos are free stock images from Unsplash photographers.")}</span>
           <a href={P.person.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[40px] items-center hover:text-saffron">LinkedIn ↗</a>
         </div>
       </div>
